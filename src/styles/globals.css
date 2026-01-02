@@ -1,0 +1,212 @@
+@custom-variant dark (&:is(.dark *));
+
+/* Import Futura Condensed Extra Bold - Nike Style */
+@import url('https://fonts.cdnfonts.com/css/futura-condensed-extra-bold');
+/* Backup: Impact for similar condensed bold feel */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  --font-size: 16px;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #121212;
+  --card-foreground: #ffffff;
+  --popover: #121212;
+  --popover-foreground: #ffffff;
+  --primary: #A8F32C;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --accent: #1a1a1a;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.2);
+  --input-background: #000000;
+  --switch-background: #1a1a1a;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: rgba(168, 243, 44, 0.5);
+  --chart-1: #A8F32C;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --radius: 0.5rem;
+  --sidebar: #121212;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #A8F32C;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(168, 243, 44, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Apply Futura Condensed Extra Bold to headings and key elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Futura Condensed Extra Bold', 'Bebas Neue', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* Apply to buttons for that bold geometric feel */
+  button {
+    font-family: 'Futura Condensed Extra Bold', 'Bebas Neue', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Force white text on all elements by default */
+  h1, h2, h3, h4, h5, h6, p, span, div, label, button, input, textarea, select, li, a {
+    color: #ffffff;
+  }
+
+  /* Secondary text color */
+  .text-secondary {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Tertiary text color */
+  .text-tertiary {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Ensure inputs have white text */
+  input, textarea, select {
+    color: #ffffff !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Ensure list text is visible */
+  li, li span {
+    color: inherit;
+  }
+}
+
+/**
+ * Base typography. This is applied with proper white colors.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    input, textarea, select {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}

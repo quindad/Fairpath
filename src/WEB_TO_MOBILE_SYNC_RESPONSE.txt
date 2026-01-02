@@ -1,0 +1,852 @@
+════════════════════════════════════════════════════════════════════════
+                    FAIRPATH INDUSTRIES - WEB → MOBILE SYNC
+                    December 4, 2024 - WEB TEAM RESPONSE
+                    "Let's Build This Together! 🚀"
+════════════════════════════════════════════════════════════════════════
+
+Hey Mobile Team! 🔥
+
+WEB TEAM HERE - Sterling just reviewed everything you built and WE ARE BLOWN AWAY!
+
+The AI Smart Charge Lookup is GENIUS and exactly what we need. You've built 
+features we didn't even think of (countdown timers, free check system). 
+
+Here's our response, answers to your questions, and a plan to ship this together.
+
+────────────────────────────────────────────────────────────────────────
+                    🤝 ANSWERS TO YOUR QUESTIONS
+────────────────────────────────────────────────────────────────────────
+
+Q1: Do you want to adopt AI Smart Charge Lookup for web?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANSWER: ✅ ABSOLUTELY YES! Adding it TODAY.
+
+This solves the EXACT problem we identified. Users don't know legal jargon.
+
+WEB IMPLEMENTATION PLAN:
+- Add "Don't know your exact charge?" button on eligibility form
+- Opens Smart Lookup modal
+- Same API endpoint you built
+- User enters vague description → AI finds matches → confirm → auto-fills form
+- EXACT SAME UX as mobile, just adapted for web
+
+TIMELINE: Will have it built by end of week (2 days)
+
+---
+
+Q2: Should we build messaging together or separately?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANSWER: 🤝 TOGETHER! Shared backend, different UIs.
+
+ARCHITECTURE:
+- ONE messaging API (Supabase Realtime)
+- Web: Desktop-style inbox in lawyer dashboard
+- Mobile: Native chat interface
+- Real-time sync: Message sent on web → appears on mobile instantly
+- Same `messages` and `conversations` tables
+
+WEB WILL BUILD:
+- Lawyer inbox (in lawyer dashboard)
+- Conversation threads
+- Email notifications
+- Mark as read/unread
+
+MOBILE HAS:
+- Chat interface
+- Push notifications
+- Image attachments
+
+SHARED BACKEND:
+- POST /api/legal/leads/:id/messages
+- GET /api/legal/leads/:id/messages
+- Supabase subscriptions for real-time
+
+We'll coordinate on schema this week.
+
+---
+
+Q3: Who owns backend API development?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANSWER: 🛠️ WEB TEAM will build, MOBILE will review.
+
+DIVISION OF LABOR:
+- WEB: Builds all API endpoints (we have Supabase already set up)
+- MOBILE: Reviews API specs, tests endpoints, provides feedback
+- BOTH: Coordinate on data models (you already matched ours perfectly ✅)
+
+BACKEND STACK (Already configured on web):
+- Supabase (Postgres database)
+- Supabase Edge Functions (Deno/Hono server)
+- OpenAI API (for AI features)
+- Stripe (for lawyer subscriptions)
+- SendGrid (for emails)
+
+ENDPOINTS WE'LL BUILD THIS WEEK:
+1. ✅ POST /api/legal/check-eligibility (AI eligibility)
+2. ✅ POST /api/legal/smart-lookup (AI charge lookup) ⭐
+3. ✅ GET /api/legal/lawyers (lawyer directory)
+4. ✅ POST /api/legal/consultations (book lawyer)
+5. ✅ POST /api/legal/lawyers/notify (ping lawyers)
+
+ENDPOINTS NEXT WEEK:
+6. POST /api/legal/leads/:id/messages (messaging)
+7. GET /api/legal/leads/:id/messages
+8. Supabase Realtime setup
+
+---
+
+Q4: Timeline for Stripe lawyer subscription integration?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANSWER: 📅 ALREADY INTEGRATED! (Partially)
+
+CURRENT STATE:
+- ✅ Stripe initialized (test mode)
+- ✅ Lawyer signup flow built (5 steps)
+- ✅ Payment form ready (Stripe Elements)
+- 🚧 Webhook handlers (need to finish)
+- 🚧 Subscription creation (need to connect)
+
+WHAT'S LEFT:
+- Create Stripe product ($20/month lawyer subscription)
+- Wire up signup form → Stripe → create lawyer record
+- Set up webhooks (invoice.paid, payment_failed, subscription.deleted)
+- Test in Stripe test mode
+- Switch to live mode
+
+TIMELINE: Will be done this week (3 days)
+
+MOBILE IMPACT:
+- Mobile doesn't need Stripe (lawyers sign up on web)
+- Mobile just checks lawyer.subscription_status from database
+- If status = "active" → show lawyer in directory
+- If status = "past_due" or "canceled" → hide lawyer
+
+---
+
+Q5: When can we schedule a technical sync call?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANSWER: 🗓️ LET'S DO IT TOMORROW!
+
+PROPOSED AGENDA (1 hour):
+1. Review AI Smart Charge Lookup implementation (15 min)
+2. Align on data models & API schemas (15 min)
+3. Messaging system architecture (15 min)
+4. Backend development timeline (10 min)
+5. Q&A (5 min)
+
+ATTENDEES:
+- Web: Sterling (lead dev)
+- Mobile: Your team lead
+- Backend: [Assign someone from web or mobile]
+
+CALENDAR INVITE:
+- When: Tomorrow, 2pm PST / 5pm EST
+- Where: Zoom / Google Meet / Discord
+- Duration: 1 hour
+
+Send us your availability and we'll set it up!
+
+────────────────────────────────────────────────────────────────────────
+                    ✅ WHAT WEB WILL ADD (Inspired by Mobile)
+────────────────────────────────────────────────────────────────────────
+
+1. AI SMART CHARGE LOOKUP ⭐
+   - You built it, we're adding it to web
+   - Same API, web-optimized UI
+   - Timeline: 2 days
+
+2. FREE CHECK SYSTEM
+   - Mobile has: 1 free check/month for Plus/Pro
+   - Web needs this too (prevent abuse)
+   - Track in eligibility_checks_used table
+   - Timeline: 1 day
+
+3. COUNTDOWN TIMERS
+   - Mobile shows: "Eligible in 6 months" or "Dec 15, 2024"
+   - Web should show same
+   - Calculate from waiting_period_end in database
+   - Timeline: 1 day
+
+4. ANIMATED AI CHECKING
+   - Mobile has 5-stage progress
+   - Web currently just shows loading spinner
+   - Will add similar animation
+   - Timeline: 1 day (nice-to-have)
+
+5. CHARGE STATUS BADGES
+   - Mobile has: ✅ Eligible | ⏰ Not Yet | ❓ Not Checked
+   - Web should match
+   - Timeline: 1 day
+
+────────────────────────────────────────────────────────────────────────
+                    🏗️ SHARED BACKEND ARCHITECTURE
+────────────────────────────────────────────────────────────────────────
+
+ONE DATABASE (Supabase Postgres)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tables (Mobile already matched these ✅):
+- criminal_charges
+- expungement_results
+- lawyers
+- lawyer_consultations
+- lawyer_notifications
+- messages
+- conversations
+- eligibility_checks_used
+- reviews
+
+Auth (Supabase):
+- User auth (shared - same users on web & mobile)
+- Lawyer auth (separate user type, can log in on web or mobile)
+
+---
+
+ONE API (Supabase Edge Functions)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Endpoint Structure:
+/api/legal/*
+
+AI Endpoints:
+- POST /api/legal/check-eligibility
+  * Input: charge data
+  * Output: eligibility result
+  * Uses: OpenAI GPT-4o-mini
+  * Called by: Web & Mobile
+
+- POST /api/legal/smart-lookup ⭐
+  * Input: vague description + state + date
+  * Output: 3 exact charge matches with confidence
+  * Uses: OpenAI GPT-4o-mini (+ optional court APIs)
+  * Called by: Web & Mobile
+
+Lawyer Endpoints:
+- GET /api/legal/lawyers
+  * Query: state, specialty, sort
+  * Returns: Paginated lawyer list
+  * Filter: subscription_status = 'active'
+  * Called by: Web & Mobile
+
+- GET /api/legal/lawyers/:id
+  * Returns: Full lawyer profile + reviews
+  * Called by: Web & Mobile
+
+- POST /api/legal/lawyers (Web only)
+  * Lawyer signup
+  * Creates Stripe customer + subscription
+  * Called by: Web only (mobile doesn't have lawyer onboarding)
+
+Consultation Endpoints:
+- POST /api/legal/consultations
+  * Book lawyer consultation
+  * Sends notification to lawyer
+  * Called by: Web & Mobile
+
+- GET /api/legal/consultations
+  * List user's consultations or lawyer's bookings
+  * Called by: Web & Mobile
+
+Messaging Endpoints:
+- POST /api/legal/leads/:id/messages
+  * Send message
+  * Triggers push notification
+  * Called by: Web & Mobile
+
+- GET /api/legal/leads/:id/messages
+  * Get conversation history
+  * Called by: Web & Mobile
+
+Notification Endpoints:
+- POST /api/legal/lawyers/notify
+  * Ping lawyers when eligible case found
+  * Sends email/SMS/push
+  * Called by: Backend (after AI check)
+
+---
+
+ONE AI SERVICE (OpenAI)
+━━━━━━━━━━━━━━━━━━━━━
+
+Integration:
+- API Key: Stored in Supabase secrets
+- Model: GPT-4o-mini (fast, cheap, good for legal)
+- Rate Limiting: 100 requests/day per user (free tier)
+- Caching: Common charges cached (faster, cheaper)
+
+Eligibility Check Prompt:
+```
+You are a legal expert specializing in criminal record expungement across all 50 US states.
+
+Analyze this criminal charge for expungement eligibility:
+- Offense: {offense}
+- Type: {offenseType}
+- Severity: {severity}
+- State: {state}
+- County: {county}
+- Conviction Date: {convictionDate}
+- Sentence Completed: {sentenceCompletedDate}
+- Probation Complete: {probationCompleted}
+- Parole Complete: {paroleCompleted}
+- Fines Paid: {finesPaid}
+- Additional Convictions: {additionalConvictions}
+
+Return JSON:
+{
+  "eligible": true/false,
+  "confidence": "high/moderate/low",
+  "eligibilityReason": "Explain why...",
+  "waitingPeriodEnd": "2025-03-15" or null,
+  "nextSteps": ["Step 1", "Step 2", ...],
+  "timeline": "3-6 months",
+  "courtFilingFee": 150,
+  "estimatedLawyerCostMin": 800,
+  "estimatedLawyerCostMax": 2500,
+  "stateLaw": "CA PC 1203.4",
+  "requirements": ["Requirement 1", ...],
+  "alternatives": [...]
+}
+```
+
+Smart Lookup Prompt:
+```
+You are a legal expert specializing in criminal charges.
+
+A person describes their charge as: "{description}"
+State: {state}
+County: {county} (optional)
+Date: {date} (optional)
+
+Find the 3 most likely exact criminal charges that match this description.
+
+Return JSON array:
+[
+  {
+    "officialName": "Possession of Controlled Substance",
+    "commonNames": ["Drug Possession", "Possession", ...],
+    "statute": "California Health & Safety Code § 11350",
+    "offenseType": "Drug",
+    "severity": "Felony",
+    "confidence": 95,
+    "matchReason": "Very common charge matching...",
+    "description": "Unlawful possession of..."
+  },
+  ...
+]
+```
+
+---
+
+CACHING STRATEGY
+━━━━━━━━━━━━━━━
+
+Common charges get cached:
+- "Drug Possession" + "California" → Cached result
+- Same charge + different user → Instant response (no AI call)
+- Cache TTL: 30 days (laws don't change often)
+
+Cache Key Format:
+```
+legal:eligibility:{state}:{offense}:{offenseType}:{severity}:{yearsAgo}
+```
+
+Example:
+```
+legal:eligibility:California:Drug_Possession:Drug:Felony:6
+→ Returns cached result for 6-year-old CA drug possession felony
+```
+
+Cache Storage: Supabase (key-value table or Redis)
+
+Benefits:
+- Faster responses (no AI call)
+- Lower costs (no OpenAI charges)
+- Same accuracy (laws rarely change)
+
+────────────────────────────────────────────────────────────────────────
+                    📊 DATABASE SCHEMA (FINAL VERSION)
+────────────────────────────────────────────────────────────────────────
+
+We reviewed your schemas - PERFECT MATCH! Here's the final version both teams will use:
+
+```sql
+-- Criminal Charges
+CREATE TABLE criminal_charges (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  
+  -- Charge details
+  offense VARCHAR(255) NOT NULL,
+  offense_type VARCHAR(50), -- Drug, Theft, Assault, DUI, etc.
+  severity VARCHAR(50), -- Felony, Misdemeanor, Infraction
+  statute VARCHAR(255), -- e.g., "CA H&S 11350" (from Smart Lookup)
+  
+  -- Location
+  state VARCHAR(50) NOT NULL,
+  county VARCHAR(100),
+  
+  -- Dates
+  conviction_date DATE NOT NULL,
+  sentence_completed_date DATE,
+  
+  -- Completion status
+  probation_completed BOOLEAN DEFAULT false,
+  parole_completed BOOLEAN DEFAULT false,
+  fines_paid BOOLEAN DEFAULT false,
+  additional_convictions INTEGER DEFAULT 0,
+  
+  -- Eligibility check status
+  status VARCHAR(20) DEFAULT 'not-checked', -- not-checked, pending, checked
+  checked_at TIMESTAMP,
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_criminal_charges_user ON criminal_charges(user_id);
+CREATE INDEX idx_criminal_charges_status ON criminal_charges(status);
+
+
+-- Expungement Results
+CREATE TABLE expungement_results (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  charge_id UUID REFERENCES criminal_charges(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  
+  -- AI Analysis
+  eligible BOOLEAN NOT NULL,
+  confidence VARCHAR(20), -- high, moderate, low
+  eligibility_reason TEXT,
+  waiting_period_end DATE, -- NULL if already eligible
+  
+  -- Details
+  next_steps TEXT[], -- Array of steps
+  timeline VARCHAR(50), -- e.g., "3-6 months"
+  court_filing_fee INTEGER, -- in cents
+  estimated_lawyer_cost_min INTEGER, -- in cents
+  estimated_lawyer_cost_max INTEGER, -- in cents
+  state_law VARCHAR(255), -- e.g., "CA PC 1203.4"
+  requirements TEXT[], -- Array of requirements
+  alternatives JSONB, -- Alternative options if not eligible
+  
+  -- Lawyer matching
+  matched_lawyers_count INTEGER DEFAULT 0,
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_expungement_results_charge ON expungement_results(charge_id);
+CREATE INDEX idx_expungement_results_user ON expungement_results(user_id);
+CREATE INDEX idx_expungement_results_eligible ON expungement_results(eligible);
+
+
+-- Lawyers
+CREATE TABLE lawyers (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  email VARCHAR(255) UNIQUE NOT NULL,
+  phone VARCHAR(20),
+  password_hash VARCHAR(255) NOT NULL,
+  
+  -- Personal info
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  firm_name VARCHAR(255),
+  photo_url TEXT,
+  bio TEXT,
+  
+  -- Credentials
+  bar_number VARCHAR(50) NOT NULL,
+  bar_state VARCHAR(50) NOT NULL,
+  years_experience INTEGER,
+  practice_areas TEXT[], -- e.g., ["Expungement", "Sealing", "Pardons"]
+  
+  -- Service areas
+  service_states TEXT[], -- States where licensed
+  service_counties TEXT, -- Specific counties (optional)
+  
+  -- Pricing
+  consultation_fee INTEGER DEFAULT 0, -- in cents, 0 = free
+  expungement_fee_min INTEGER, -- in cents
+  expungement_fee_max INTEGER, -- in cents
+  sealing_fee_min INTEGER, -- in cents
+  sealing_fee_max INTEGER, -- in cents
+  
+  -- Stats
+  rating DECIMAL(2,1) DEFAULT 0.0, -- 0.0 to 5.0
+  review_count INTEGER DEFAULT 0,
+  cases_completed INTEGER DEFAULT 0,
+  success_rate INTEGER DEFAULT 0, -- 0 to 100
+  avg_response_time VARCHAR(50), -- e.g., "2 hours"
+  
+  -- Subscription
+  subscription_status VARCHAR(20) DEFAULT 'active', -- active, past_due, canceled
+  subscription_id VARCHAR(255), -- Stripe subscription ID
+  stripe_customer_id VARCHAR(255), -- Stripe customer ID
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_lawyers_email ON lawyers(email);
+CREATE INDEX idx_lawyers_subscription ON lawyers(subscription_status);
+CREATE INDEX idx_lawyers_service_states ON lawyers USING GIN (service_states);
+CREATE INDEX idx_lawyers_rating ON lawyers(rating DESC);
+
+
+-- Lawyer Consultations
+CREATE TABLE lawyer_consultations (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  lawyer_id UUID REFERENCES lawyers(id) ON DELETE CASCADE,
+  charge_id UUID REFERENCES criminal_charges(id) ON DELETE SET NULL,
+  
+  -- Consultation details
+  consultation_type VARCHAR(20) NOT NULL, -- phone, video, in-person
+  scheduled_date DATE NOT NULL,
+  scheduled_time TIME NOT NULL,
+  
+  -- Client info
+  client_name VARCHAR(255),
+  client_phone VARCHAR(20),
+  client_email VARCHAR(255),
+  notes TEXT,
+  
+  -- Status
+  status VARCHAR(20) DEFAULT 'pending', -- pending, confirmed, completed, cancelled
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_consultations_user ON lawyer_consultations(user_id);
+CREATE INDEX idx_consultations_lawyer ON lawyer_consultations(lawyer_id);
+CREATE INDEX idx_consultations_status ON lawyer_consultations(status);
+CREATE INDEX idx_consultations_date ON lawyer_consultations(scheduled_date);
+
+
+-- Lawyer Notifications
+CREATE TABLE lawyer_notifications (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  lawyer_id UUID REFERENCES lawyers(id) ON DELETE CASCADE,
+  notification_type VARCHAR(50) NOT NULL, -- eligible_case, new_booking, new_message
+  
+  -- Related records
+  charge_id UUID REFERENCES criminal_charges(id) ON DELETE SET NULL,
+  user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+  consultation_id UUID REFERENCES lawyer_consultations(id) ON DELETE SET NULL,
+  
+  -- Data
+  data JSONB, -- Additional notification data
+  
+  -- Status
+  sent_at TIMESTAMP DEFAULT NOW(),
+  read_at TIMESTAMP
+);
+
+CREATE INDEX idx_notifications_lawyer ON lawyer_notifications(lawyer_id);
+CREATE INDEX idx_notifications_sent ON lawyer_notifications(sent_at DESC);
+
+
+-- Messages (for lawyer-client communication)
+CREATE TABLE messages (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  conversation_id UUID NOT NULL,
+  sender_type VARCHAR(10) NOT NULL, -- user, lawyer
+  sender_id UUID NOT NULL,
+  
+  -- Message content
+  message TEXT NOT NULL,
+  attachments JSONB, -- Array of file URLs
+  
+  -- Status
+  read BOOLEAN DEFAULT false,
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_messages_conversation ON messages(conversation_id);
+CREATE INDEX idx_messages_created ON messages(created_at DESC);
+
+
+-- Conversations
+CREATE TABLE conversations (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  lawyer_id UUID REFERENCES lawyers(id) ON DELETE CASCADE,
+  charge_id UUID REFERENCES criminal_charges(id) ON DELETE SET NULL,
+  
+  -- Status
+  last_message_at TIMESTAMP DEFAULT NOW(),
+  unread_count_user INTEGER DEFAULT 0,
+  unread_count_lawyer INTEGER DEFAULT 0,
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_conversations_user ON conversations(user_id);
+CREATE INDEX idx_conversations_lawyer ON conversations(lawyer_id);
+CREATE INDEX idx_conversations_last_message ON conversations(last_message_at DESC);
+
+
+-- Eligibility Checks Used (for free check tracking)
+CREATE TABLE eligibility_checks_used (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  charge_id UUID REFERENCES criminal_charges(id) ON DELETE CASCADE,
+  
+  -- Subscription tracking
+  subscription_tier VARCHAR(20), -- plus, pro
+  was_free_check BOOLEAN DEFAULT true,
+  
+  -- Timestamp
+  checked_at TIMESTAMP DEFAULT NOW(),
+  month INTEGER, -- 1-12
+  year INTEGER -- e.g., 2024
+);
+
+CREATE INDEX idx_checks_used_user_month ON eligibility_checks_used(user_id, year, month);
+
+
+-- Reviews (for lawyer ratings)
+CREATE TABLE reviews (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  lawyer_id UUID REFERENCES lawyers(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  consultation_id UUID REFERENCES lawyer_consultations(id) ON DELETE SET NULL,
+  
+  -- Review content
+  rating INTEGER NOT NULL CHECK (rating >= 1 AND rating <= 5),
+  review_text TEXT,
+  
+  -- Verification
+  verified BOOLEAN DEFAULT false, -- True if had actual consultation
+  
+  -- Metadata
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_reviews_lawyer ON reviews(lawyer_id);
+CREATE INDEX idx_reviews_rating ON reviews(rating);
+```
+
+────────────────────────────────────────────────────────────────────────
+                    🚀 COORDINATED LAUNCH PLAN
+────────────────────────────────────────────────────────────────────────
+
+WEEK 1: Backend Foundation (Dec 4-8)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WEB TEAM:
+- [x] Create all database tables (Day 1)
+- [ ] Build AI eligibility endpoint (Day 2-3)
+- [ ] Build Smart Lookup endpoint (Day 2-3)
+- [ ] Integrate OpenAI GPT-4o-mini (Day 2)
+- [ ] Build lawyer directory endpoint (Day 4)
+- [ ] Test all endpoints (Day 5)
+
+MOBILE TEAM:
+- [ ] Review API specs (Day 1)
+- [ ] Test endpoints as they go live (Day 2-5)
+- [ ] Provide feedback (ongoing)
+- [ ] Update mock data to match real API (Day 5)
+
+DELIVERABLES:
+✅ All database tables created
+✅ AI endpoints working (eligibility + Smart Lookup)
+✅ Lawyer directory endpoint working
+✅ Both teams tested endpoints
+
+---
+
+WEEK 2: Core Integration (Dec 11-15)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WEB TEAM:
+- [ ] Add Smart Lookup to web UI (Day 1-2)
+- [ ] Build consultation booking endpoint (Day 1)
+- [ ] Build lawyer notification system (Day 2-3)
+- [ ] Set up Stripe subscriptions (Day 3-4)
+- [ ] Test cross-platform (Day 5)
+
+MOBILE TEAM:
+- [ ] Connect to real AI endpoints (Day 1)
+- [ ] Connect to lawyer directory (Day 2)
+- [ ] Connect to consultation booking (Day 3)
+- [ ] Test full user flow (Day 4-5)
+
+DELIVERABLES:
+✅ Smart Lookup working on web
+✅ Mobile connected to all APIs
+✅ Consultation booking working
+✅ Lawyers can sign up (web) and be found (mobile)
+
+---
+
+WEEK 3: Messaging & Polish (Dec 18-22)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WEB TEAM:
+- [ ] Build messaging API endpoints (Day 1-2)
+- [ ] Set up Supabase Realtime (Day 1)
+- [ ] Build lawyer inbox (web dashboard) (Day 3-4)
+- [ ] Email notifications (Day 3)
+- [ ] Cross-platform testing (Day 5)
+
+MOBILE TEAM:
+- [ ] Connect messaging to real API (Day 1-2)
+- [ ] Set up push notifications (Day 2-3)
+- [ ] Polish UI/UX (Day 3-4)
+- [ ] End-to-end testing (Day 5)
+
+DELIVERABLES:
+✅ Messaging working (web ↔ mobile)
+✅ Push notifications working
+✅ All features polished
+✅ Cross-platform tested
+
+---
+
+WEEK 4: Launch Prep (Jan 2-5, 2025)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BOTH TEAMS:
+- [ ] Load testing (AI API, database)
+- [ ] Security audit
+- [ ] Create onboarding tutorials
+- [ ] Prepare marketing materials
+- [ ] Soft launch with beta users
+
+LAUNCH: January 8, 2025 🚀
+
+────────────────────────────────────────────────────────────────────────
+                    💰 REVENUE MODEL (ALIGNED)
+────────────────────────────────────────────────────────────────────────
+
+FAIRPATH LEGAL PRICING:
+━━━━━━━━━━━━━━━━━━━━━━
+
+For Users (Justice-Impacted People):
+- 100% FREE eligibility checks
+- FREE lawyer consultations
+- FREE messaging with lawyers
+- No credit card required
+- No hidden fees EVER
+
+For Lawyers:
+- $20/month subscription
+- Unlimited pre-qualified leads
+- Profile in directory (web & mobile)
+- Messaging with clients
+- No commission on fees (lawyers keep 100%)
+- Cancel anytime
+
+FairPath Revenue:
+- $20/month × lawyers
+- NO commission on lawyer fees (unlike competitors)
+- Upsell potential: Premium tiers ($50/mo for priority leads)
+
+Conservative Year 1:
+- 100 lawyers × $20/mo = $2,000/month = $24,000/year
+
+Moderate Year 1:
+- 500 lawyers × $20/mo = $10,000/month = $120,000/year
+
+Aggressive Year 1:
+- 1,000 lawyers × $20/mo = $20,000/month = $240,000/year
+
+LOW CHURN EXPECTED:
+- If lawyer gets even 1 client/month, they make $500-2,000
+- Subscription pays for itself 25-100x
+- As long as leads keep coming, lawyers stay subscribed
+
+────────────────────────────────────────────────────────────────────────
+                    🎯 SUCCESS METRICS (BOTH PLATFORMS)
+────────────────────────────────────────────────────────────────────────
+
+USER METRICS:
+- Eligibility checks per month (target: 1,000+)
+- Smart Lookup usage rate (target: 50%+ of checks)
+- Eligible users (% of all checks)
+- Lawyer contacts per eligible user (target: 2-3)
+- User to consultation conversion (target: 30%+)
+
+LAWYER METRICS:
+- Lawyer signups per month (target: 20+)
+- Active subscriptions (target: 80%+ retention)
+- Leads per lawyer per month (target: 10+)
+- Lead to consultation conversion (target: 25%+)
+- Average response time (target: <4 hours)
+
+PLATFORM METRICS:
+- Monthly Recurring Revenue (MRR)
+- Churn rate (target: <10%/month)
+- Customer Acquisition Cost (CAC)
+- Lifetime Value (LTV)
+- LTV/CAC ratio (target: >3)
+
+CROSS-PLATFORM:
+- % users using mobile vs web
+- % consultations booked on mobile vs web
+- Messaging engagement rate
+- Cross-platform sync accuracy (should be 100%)
+
+────────────────────────────────────────────────────────────────────────
+                    📞 LET'S SYNC UP THIS WEEK!
+────────────────────────────────────────────────────────────────────────
+
+PROPOSED MEETING:
+━━━━━━━━━━━━━━━━━
+
+When: Tomorrow (Dec 5) @ 2pm PST / 5pm EST
+Duration: 1 hour
+Platform: Zoom / Google Meet / Discord
+
+AGENDA:
+1. Introductions (5 min)
+2. Mobile demo: Show us Smart Lookup! (10 min)
+3. Web demo: Show what we built (10 min)
+4. Align on AI implementation (10 min)
+5. Database & API review (10 min)
+6. Messaging architecture (10 min)
+7. Launch timeline (5 min)
+
+RSVP:
+Reply with your availability and preferred platform!
+
+────────────────────────────────────────────────────────────────────────
+                    💬 CONTACT INFO
+────────────────────────────────────────────────────────────────────────
+
+WEB TEAM:
+Lead: Sterling
+Email: sterling@fairpath.com
+Slack: @sterling
+Phone: [your phone]
+
+We're PUMPED about what you built! The Smart Lookup is next-level.
+
+Let's ship this together and change lives. 💜🚀
+
+════════════════════════════════════════════════════════════════════════
+
+TL;DR:
+✅ YES to Smart Lookup on web (building it this week)
+✅ Messaging will be built together (shared backend)
+✅ Web owns backend API development
+✅ Stripe integration done this week
+✅ Let's sync tomorrow to coordinate
+
+🔥 WE'RE READY TO LAUNCH! 🔥
+
+════════════════════════════════════════════════════════════════════════

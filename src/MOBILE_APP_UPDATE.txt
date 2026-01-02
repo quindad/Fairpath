@@ -1,0 +1,287 @@
+════════════════════════════════════════════════════════════════════════
+                    FAIRPATH INDUSTRIES - WEBSITE UPDATE
+                         December 4, 2024
+════════════════════════════════════════════════════════════════════════
+
+Hey team! Here's everything we've built on the website side. Sharing so you can align the mobile app messaging and features with what we're presenting publicly.
+
+────────────────────────────────────────────────────────────────────────
+                         COMPANY OVERVIEW
+────────────────────────────────────────────────────────────────────────
+
+FAIRPATH INDUSTRIES (Parent Company)
+- Lime green (#A8F32C) and black (#000000) branding across all platforms
+- Tagline: "Comprehensive reentry ecosystem for justice-impacted people"
+- Business model: 100% FREE for inmates/formerly incarcerated
+- Revenue: Employers pay $500-1,500 per hire + subscriptions ($500-5,000/month)
+
+────────────────────────────────────────────────────────────────────────
+                    ALL 5 SERVICE PLATFORMS (LIVE)
+────────────────────────────────────────────────────────────────────────
+
+1. FRIEND A FELON 🟢
+   Color: Lime Green (#A8F32C)
+   Tagline: "For the People"
+   Founder: Sterling Braden
+   Dedicated to: Quin Braden (Sterling's daughter - his superhero and purpose)
+
+   What it is:
+   - Sterling's PERSONAL story (got out, taught himself to code, built this)
+   - 4 platforms in one marketplace:
+     * Job Marketplace - Fair chance employers actively hiring
+     * Housing FastTrack - Background-friendly landlords
+     * Free Marketplace - Community donations (furniture, clothes, etc.)
+     * Services Directory - Legal help, therapy, training, coaching
+
+   Key Stats We're Using:
+   - 650K released annually from US prisons
+   - 70% can't find jobs due to background checks
+   - 50% return to prison within 3 years
+
+   Tone: Authentic, raw, Sterling's voice
+   Message: "If I can build this, you can rebuild your life"
+   Pricing: 100% FREE for justice-impacted people. Forever.
+
+
+2. FAIRPATH FORWARD 🔵
+   Color: Blue (#3B82F6)
+   Tagline: "Predictive Reentry Technology"
+   
+   What it is:
+   - Offline tablet app for incarcerated individuals
+   - Data collection platform that facilities use
+   - Works 100% offline (no internet required in prison)
+
+   THE BIG 3 METRICS (Use these everywhere):
+   - 66% lower recidivism vs national average
+   - 77% employment rate within 30 days
+   - $47,000 saved per person (avoided incarceration costs)
+
+   Features in the app:
+   - Resume builder
+   - Goal tracking with SMART framework
+   - Habit tracker (exercise, meditation, reading, etc.)
+   - Daily check-ins (mood, challenges, wins)
+   - Digital certifications (verified skills)
+   - Release planner (90-day countdown)
+   - Reentry resource library
+
+   REENTRY READINESS SCORE (0-100):
+   - Employment Readiness (resume, skills, interview prep)
+   - Housing & Financial Stability (savings, budget plan)
+   - Behavioral Health (check-in consistency, emotional regulation)
+   - Social & Emotional Support (family contact, support network)
+
+   RECIDIVISM RISK PREDICTION:
+   - LOW / MEDIUM / HIGH
+   - Tracks protective factors (job lined up, family support, housing)
+   - Tracks risk factors (substance abuse history, gang affiliation)
+
+   For States/Facilities:
+   - ROI: 183:1 (every $1 spent saves $183 in recidivism costs)
+   - DOJ/DOL grant compliance
+   - Intervention alerts for at-risk individuals
+   - Minimal staff burden
+
+   Pilot Results:
+   - 81% adoption rate (people actually use it)
+   - 18 days average time to employment
+   - $16.50 average starting wage
+   - 92% daily check-in rate
+
+
+3. FAIRPATH STAFFING 🟠
+   Color: Orange (#F97316)
+   Tagline: "Pre-Vetted Second Chance Talent"
+
+   What it is:
+   - Employer platform to hire candidates from Forward app
+   - All candidates have Reentry Readiness Scores
+   - Pre-vetted, verified skills, recidivism risk assessed
+
+   Pricing for Employers:
+   - $500-1,500 per hire (pay only when you hire)
+   - Subscriptions: $500-5,000/month for volume hiring
+
+   WOTC TAX CREDITS:
+   - $2,400-$9,600 per qualified hire
+   - We handle all paperwork/filing
+   - Employers get credits automatically
+
+   Key Selling Points:
+   - 30% lower turnover (our candidates are highly motivated)
+   - Pre-vetted candidates (verified through Forward app data)
+   - Reentry Readiness Score (0-100) for each candidate
+   - All certifications verified digitally
+   - Recidivism risk assessment (LOW/MEDIUM/HIGH)
+
+   How It Works:
+   1. Search candidates by skills, location, availability
+   2. Review profiles (readiness scores, skills, certifications)
+   3. Interview candidates who match
+   4. Hire and get WOTC tax credits
+
+
+4. FAIRPATH LEGAL 🟣
+   Color: Purple (#A855F7)
+   Tagline: "Clear Your Record with AI"
+
+   What it is:
+   - AI-powered expungement eligibility checker
+   - Lawyer marketplace connecting users with attorneys
+
+   How It Works:
+   1. User enters criminal charges (offense, year, state)
+   2. AI analyzes against all 50-state expungement laws
+   3. Instant result: eligible/not eligible + next steps
+   4. If eligible, match with verified lawyers in your area
+
+   What the AI Checks:
+   - Offense type & severity (felony vs misdemeanor, violent vs non-violent)
+   - Time since conviction (waiting periods by state)
+   - State-specific laws (all 50 states)
+   - Sentence completion (probation, parole, fines)
+   - Additional convictions (multiple charges affect eligibility)
+   - Disqualifying factors (sex offenses, violent crimes)
+   - Alternative options (sealing, pardons if not eligible for expungement)
+   - Cost & timeline estimates (filing fees, lawyer costs, processing time)
+
+   Example AI Result:
+   "Your 2018 California drug possession conviction is eligible for expungement 
+   under PC 1203.4. You completed probation in 2020, so you qualify now. 
+   Filing fee: $150. Average timeline: 3-6 months."
+
+   Pricing:
+   - 100% FREE for people with criminal records
+   - Lawyers pay $20/month for listing + access to pre-qualified leads
+   - Users pay lawyer directly for services ($500-2,000 typically)
+   - We take NO commission from lawyer fees
+
+
+5. FAIRPATH SIMULATIONS 🔴
+   Color: Red (#EF4444)
+   Tagline: "Walk a Mile in Their Shoes"
+
+   What it is:
+   - Interactive reentry simulation game
+   - For employers, educators, general public
+   - Teaches empathy through experience
+
+   How It Works:
+   - You play as someone just released from prison
+   - Start with $47 in pocket, no phone, criminal record
+   - Make 30 decisions over 30 simulated days
+   - Experience impossible choices: bus fare or food? Lie about record? 
+     Ask family for money?
+
+   Real Scenarios:
+   - Getting rejected from 15 jobs before anyone interviews you
+   - Choosing between probation fees and rent
+   - Landlords hanging up when you mention your record
+   - Old friends offering illegal quick money
+   - Navigating probation requirements while working full-time
+
+   Who It's For:
+   - Employers/HR: Diversity training, fair chance hiring education
+   - Educators: Criminal justice courses, social work programs
+   - General Public: Build empathy, challenge assumptions
+
+   Impact Stats:
+   - 87% changed perspective on reentry
+   - 64% increased empathy for justice-impacted people
+   - 92% would recommend to others
+
+   Pricing:
+   - FREE for individuals
+   - $299/month for organizations (unlimited team access, analytics)
+   - Custom pricing for education (multi-class licensing)
+
+────────────────────────────────────────────────────────────────────────
+                         KEY MESSAGING POINTS
+────────────────────────────────────────────────────────────────────────
+
+1. HONEST ABOUT BEING IN DEVELOPMENT
+   - "We're building and developing this ecosystem"
+   - No fake stats or inflated numbers
+   - Real pilot data from Forward app only
+
+2. STERLING'S STORY IS AUTHENTIC
+   - He got out, taught himself to code, built Friend A Felon
+   - Everything on Friend A Felon is HIS voice, not corporate
+   - Dedicated to his daughter Quin Braden (his superhero, his purpose)
+
+3. DUAL IDENTITY
+   - Friend A Felon: Personal, authentic, "for the people"
+   - FairPath services: Professional, corporate, data-driven
+
+4. 100% FREE FOR JUSTICE-IMPACTED PEOPLE
+   - No hidden fees, no premium tiers, no bullshit
+   - Revenue from employers ($500-1,500 per hire, subscriptions)
+   - Revenue from lawyers ($20/month)
+
+5. COLOR SYSTEM
+   - Green (#A8F32C) = Main FairPath brand + Friend A Felon
+   - Blue (#3B82F6) = FairPath Forward (data/tech)
+   - Orange (#F97316) = FairPath Staffing (hiring/employment)
+   - Purple (#A855F7) = FairPath Legal (expungement)
+   - Red (#EF4444) = FairPath Simulations (empathy/gaming)
+
+────────────────────────────────────────────────────────────────────────
+                    WHAT TO ALIGN IN MOBILE APP
+────────────────────────────────────────────────────────────────────────
+
+1. Use the same metrics (66% lower recidivism, 77% employment, $47K saved)
+2. Reentry Readiness Score formula should match (0-100, 4 components)
+3. Recidivism risk prediction should match (LOW/MEDIUM/HIGH categories)
+4. Features list should align with what's on the website
+5. If you show employer view, match Staffing page features
+6. Tone: Professional but empathetic (not sterile corporate)
+
+────────────────────────────────────────────────────────────────────────
+                         NAVIGATION STRUCTURE
+────────────────────────────────────────────────────────────────────────
+
+Homepage
+├── About (Company story, mission, team)
+├── Services (Dropdown)
+│   ├── Friend A Felon (Sterling's story, 4 platforms)
+│   ├── FairPath Forward (Tablet app for inmates)
+│   ├── FairPath Staffing (Employer platform)
+│   ├── FairPath Legal (AI expungement checker)
+│   └── FairPath Simulations (Reentry simulation game)
+├── Blog (Updates, stories, news)
+├── Donate (Support the mission)
+└── Contact (Get in touch)
+
+────────────────────────────────────────────────────────────────────────
+                         TECHNICAL NOTES
+────────────────────────────────────────────────────────────────────────
+
+Website Stack:
+- React + TypeScript
+- Tailwind CSS v4.0
+- Shadcn/ui components
+- Supabase backend (auth, database, storage)
+- All navigation working, no bugs
+
+Next Steps (Website):
+- Wire up signup flows for each service
+- Build actual dashboards (user, employer, lawyer)
+- Connect to backend APIs
+- Add real testimonials/user stories
+- Create service comparison table
+
+Questions for Mobile Team:
+1. Does your Readiness Score calculation match ours?
+2. Do you track all the same metrics we're advertising?
+3. Can you export data to Staffing platform for employers?
+4. What's the timeline for offline functionality?
+
+────────────────────────────────────────────────────────────────────────
+
+COPY/PASTE THIS ENTIRE FILE INTO YOUR TEAM CHAT 👆
+
+Built by Sterling with love for the people.
+Dedicated to Quin Braden - our superhero. 💚
+
+════════════════════════════════════════════════════════════════════════

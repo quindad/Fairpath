@@ -1,0 +1,524 @@
+════════════════════════════════════════════════════════════════════════
+                    FAIRPATH LEGAL - TECHNICAL ARCHITECTURE
+                    Web + Mobile + Backend Alignment
+════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                          USER FLOWS                                  │
+└─────────────────────────────────────────────────────────────────────┘
+
+FLOW 1: Person Seeking Expungement
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. User visits Legal page
+2. Clicks "Check Your Eligibility"
+3. Fills out eligibility form:
+   - Enters charges (offense, year, state, county, type)
+   - Answers probation/pending charges questions
+4. Submits to AI API
+5. Receives eligibility result
+6. If eligible → "View Lawyers" button appears
+7. User browses lawyer directory (pre-filtered by state)
+8. User clicks "Contact Lawyer"
+9. Lead created in database
+10. Lawyer gets notification
+11. Messaging conversation starts
+12. User hires lawyer (pays lawyer directly, not us)
+
+
+FLOW 2: Lawyer Joining Platform
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Lawyer visits Legal page
+2. Clicks "I'm a Lawyer"
+3. Goes through 5-step signup:
+   - Basic info
+   - Practice info
+   - Service areas
+   - Pricing
+   - Payment ($20/month subscription)
+4. Stripe processes payment
+5. Lawyer profile created in database
+6. Lawyer redirected to dashboard
+7. Lawyer receives leads when users check eligibility
+8. Lawyer responds to leads via messaging
+9. Lawyer converts leads to clients
+
+
+FLOW 3: Lead Generation (Automated)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. User completes eligibility check
+2. AI determines user is eligible
+3. System queries lawyers table:
+   - Filter by user's state
+   - Filter by practice areas (expungement)
+   - Filter by active subscription status
+4. For each matched lawyer:
+   - Create lead record
+   - Send email notification to lawyer
+   - Increment lawyer's lead count
+5. User sees "12 lawyers matched" message
+6. User can browse all matched lawyers in directory
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                     DATABASE SCHEMA                                  │
+└─────────────────────────────────────────────────────────────────────┘
+
+TABLE: eligibility_checks
+━━━━━━━━━━━━━━━━━━━━━━━
+id                    UUID PRIMARY KEY
+user_id               UUID (references users table)
+charges               JSONB (array of charge objects)
+probation_completed   BOOLEAN
+pending_charges       BOOLEAN
+result                JSONB (full eligibility result from AI)
+created_at            TIMESTAMP
+updated_at            TIMESTAMP
+
+INDEX: user_id, created_at
+
+
+TABLE: lawyers
+━━━━━━━━━━━━━━━
+id                      UUID PRIMARY KEY
+email                   VARCHAR UNIQUE
+phone                   VARCHAR
+password_hash           VARCHAR
+first_name              VARCHAR
+last_name               VARCHAR
+firm_name               VARCHAR
+bar_number              VARCHAR
+bar_state               VARCHAR
+years_experience        INTEGER
+practice_areas          JSONB (array of strings)
+service_states          JSONB (array of strings)
+service_counties        TEXT
+bio                     TEXT
+consultation_fee        INTEGER
+expungement_fee_min     INTEGER
+expungement_fee_max     INTEGER
+sealing_fee_min         INTEGER
+sealing_fee_max         INTEGER
+rating                  DECIMAL(2,1) DEFAULT 0
+review_count            INTEGER DEFAULT 0
+cases_completed         INTEGER DEFAULT 0
+success_rate            INTEGER DEFAULT 0
+avg_response_time       VARCHAR
+subscription_status     VARCHAR (active, canceled, past_due)
+subscription_id         VARCHAR (Stripe subscription ID)
+stripe_customer_id      VARCHAR
+created_at              TIMESTAMP
+updated_at              TIMESTAMP
+
+INDEX: service_states (GIN), subscription_status, rating
+
+
+TABLE: leads
+━━━━━━━━━━━━
+id                      UUID PRIMARY KEY
+lawyer_id               UUID (references lawyers table)
+user_id                 UUID (references users table)
+eligibility_check_id    UUID (references eligibility_checks table)
+client_name             VARCHAR
+client_email            VARCHAR
+client_phone            VARCHAR
+offense                 VARCHAR
+state                   VARCHAR
+county                  VARCHAR
+eligibility_details     TEXT
+message                 TEXT
+status                  VARCHAR (new, contacted, consultation_scheduled, converted, closed)
+consultation_date       TIMESTAMP
+created_at              TIMESTAMP
+updated_at              TIMESTAMP
+
+INDEX: lawyer_id, user_id, status, created_at
+
+
+TABLE: messages
+━━━━━━━━━━━━━━━
+id              UUID PRIMARY KEY
+lead_id         UUID (references leads table)
+sender_type     VARCHAR (user, lawyer)
+sender_id       UUID
+message         TEXT
+read            BOOLEAN DEFAULT FALSE
+created_at      TIMESTAMP
+
+INDEX: lead_id, created_at
+
+
+TABLE: reviews
+━━━━━━━━━━━━━━
+id              UUID PRIMARY KEY
+lawyer_id       UUID (references lawyers table)
+user_id         UUID (references users table)
+lead_id         UUID (references leads table)
+rating          INTEGER (1-5)
+review_text     TEXT
+created_at      TIMESTAMP
+
+INDEX: lawyer_id, rating
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                        API ENDPOINTS                                 │
+└─────────────────────────────────────────────────────────────────────┘
+
+PUBLIC ENDPOINTS (No Auth Required)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+POST /api/legal/check-eligibility
+Request:
+{
+  "charges": [
+    {
+      "offense": "Drug Possession",
+      "year": "2018",
+      "state": "California",
+      "county": "Los Angeles",
+      "felonyOrMisdemeanor": "misdemeanor"
+    }
+  ],
+  "probationCompleted": true,
+  "pendingCharges": false
+}
+Response:
+{
+  "eligible": true,
+  "confidence": "high",
+  "reason": "Your 2018 California drug possession conviction...",
+  "nextSteps": [...],
+  "timeline": "3-6 months",
+  "courtFilingFee": 150,
+  "estimatedLawyerCost": { "min": 800, "max": 2500 },
+  "matchedLawyers": 12,
+  "alternativeOptions": [...]
+}
+
+
+GET /api/legal/lawyers?state=California&sort=rating
+Response:
+{
+  "lawyers": [
+    {
+      "id": "uuid",
+      "name": "John Smith",
+      "firmName": "Smith Law Group",
+      "rating": 4.8,
+      "reviewCount": 47,
+      "yearsExperience": 15,
+      "serviceStates": ["California", "Nevada"],
+      "specialties": ["Expungement", "Record Sealing"],
+      "consultationFee": 0,
+      "expungementFeeRange": "$800 - $2,500",
+      "bio": "...",
+      "stats": {
+        "casesCompleted": 523,
+        "successRate": 94,
+        "avgResponseTime": "2 hours"
+      }
+    }
+  ],
+  "total": 12
+}
+
+
+POST /api/legal/lawyers/signup
+Request:
+{
+  "email": "john@lawfirm.com",
+  "password": "...",
+  "firstName": "John",
+  "lastName": "Smith",
+  "firmName": "Smith Law Group",
+  "barNumber": "123456",
+  "barState": "California",
+  "yearsExperience": 15,
+  "practiceAreas": ["Expungement", "Record Sealing"],
+  "serviceStates": ["California"],
+  "consultationFee": 0,
+  "expungementFeeMin": 800,
+  "expungementFeeMax": 2500,
+  "sealingFeeMin": 600,
+  "sealingFeeMax": 1800,
+  "stripeToken": "tok_..."
+}
+Response:
+{
+  "lawyerId": "uuid",
+  "subscriptionId": "sub_...",
+  "status": "active"
+}
+
+
+AUTHENTICATED ENDPOINTS (Require Auth Token)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET /api/legal/lawyer/dashboard
+Headers: Authorization: Bearer <lawyer_token>
+Response:
+{
+  "stats": {
+    "totalLeads": 124,
+    "activeLeads": 18,
+    "convertedClients": 42,
+    "revenue": 52400,
+    "conversionRate": 34,
+    "avgResponseTime": "2.3 hours"
+  },
+  "recentLeads": [...]
+}
+
+
+GET /api/legal/lawyer/leads?status=new
+Headers: Authorization: Bearer <lawyer_token>
+Response:
+{
+  "leads": [
+    {
+      "id": "uuid",
+      "clientName": "Michael Johnson",
+      "clientEmail": "michael.j@email.com",
+      "clientPhone": "(555) 987-6543",
+      "offense": "Drug Possession (2018)",
+      "state": "California",
+      "county": "Los Angeles County",
+      "eligibilityDetails": "Eligible under PC 1203.4...",
+      "message": "I need help clearing my record...",
+      "status": "new",
+      "dateSubmitted": "2024-12-03"
+    }
+  ]
+}
+
+
+PUT /api/legal/lawyer/profile
+Headers: Authorization: Bearer <lawyer_token>
+Request:
+{
+  "bio": "Updated bio text...",
+  "consultationFee": 50,
+  "expungementFeeMin": 900,
+  ...
+}
+Response:
+{
+  "success": true,
+  "lawyer": { ... }
+}
+
+
+POST /api/legal/leads/:leadId/message
+Headers: Authorization: Bearer <token>
+Request:
+{
+  "message": "Hi, I'd be happy to help with your case..."
+}
+Response:
+{
+  "messageId": "uuid",
+  "createdAt": "2024-12-04T10:30:00Z"
+}
+
+
+PUT /api/legal/leads/:leadId/status
+Headers: Authorization: Bearer <lawyer_token>
+Request:
+{
+  "status": "consultation_scheduled",
+  "consultationDate": "2024-12-08T14:00:00Z"
+}
+Response:
+{
+  "success": true,
+  "lead": { ... }
+}
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    STRIPE INTEGRATION                                │
+└─────────────────────────────────────────────────────────────────────┘
+
+SUBSCRIPTION FLOW
+━━━━━━━━━━━━━━━━━
+1. Lawyer submits signup form with payment info
+2. Frontend calls Stripe.js to create token
+3. Backend receives token + lawyer data
+4. Backend creates Stripe customer:
+   POST https://api.stripe.com/v1/customers
+   {
+     email: lawyer.email,
+     name: lawyer.firstName + lawyer.lastName,
+     source: stripeToken
+   }
+5. Backend creates Stripe subscription:
+   POST https://api.stripe.com/v1/subscriptions
+   {
+     customer: customerId,
+     items: [{ price: "price_..." }], // $20/month price ID
+   }
+6. Backend saves subscription ID to lawyers table
+7. Webhook handles future events:
+   - invoice.paid → keep subscription active
+   - invoice.payment_failed → mark subscription past_due
+   - customer.subscription.deleted → cancel subscription
+
+
+WEBHOOK EVENTS TO HANDLE
+━━━━━━━━━━━━━━━━━━━━━━━
+POST /api/webhooks/stripe
+Events:
+- invoice.paid
+  → Update subscription_status = "active"
+  → Send receipt email to lawyer
+
+- invoice.payment_failed
+  → Update subscription_status = "past_due"
+  → Send email to update payment method
+  → Disable lead access after 7 days
+
+- customer.subscription.deleted
+  → Update subscription_status = "canceled"
+  → Hide lawyer from directory
+  → Send cancellation confirmation email
+
+
+PRICE ID (Create in Stripe Dashboard)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Product: FairPath Legal - Lawyer Subscription
+Price: $20/month recurring
+Billing: Monthly
+Currency: USD
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    AI ELIGIBILITY API                                │
+└─────────────────────────────────────────────────────────────────────┘
+
+OPTION 1: Build Custom AI (Recommended for MVP)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Create rule-based system for common scenarios
+- Use OpenAI GPT-4 for complex cases
+- Database of state laws (scrape/manual entry)
+- Confidence scoring based on rule matches
+
+Pseudocode:
+```
+function checkEligibility(charges, probationCompleted, pendingCharges) {
+  // Check disqualifying factors
+  if (pendingCharges) return notEligible("Pending charges must be resolved first");
+  if (!probationCompleted) return notEligible("Complete probation first");
+  
+  // Check state laws
+  for each charge {
+    law = getStateLaw(charge.state, charge.offense);
+    
+    if (law.neverEligible) return notEligible(law.reason);
+    
+    timeSince = currentYear - charge.year;
+    if (timeSince < law.waitingPeriod) {
+      return notEligible("Must wait " + (law.waitingPeriod - timeSince) + " more years");
+    }
+  }
+  
+  // If we got here, eligible!
+  return eligible({
+    reason: buildEligibilityReason(charges),
+    nextSteps: getNextSteps(charges[0].state),
+    costs: getCosts(charges[0].state),
+    timeline: getTimeline(charges[0].state)
+  });
+}
+```
+
+
+OPTION 2: Use Legal AI API (If available)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Check if services like Casetext, Ross Intelligence have expungement APIs
+- More expensive but more accurate
+- May have rate limits
+
+
+OPTION 3: Hybrid Approach (Best for Scale)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Rule-based for simple cases (80% of requests)
+- GPT-4 for complex cases (20% of requests)
+- Cache results for common charge types
+- Human lawyer review for low-confidence results
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    NOTIFICATION SYSTEM                               │
+└─────────────────────────────────────────────────────────────────────┘
+
+EMAIL NOTIFICATIONS
+━━━━━━━━━━━━━━━━━━━
+1. New Lead → Lawyer
+   Subject: "New Expungement Lead: [Client Name]"
+   Body: Client info, offense, eligibility summary, [View Lead] button
+
+2. Lawyer Response → User
+   Subject: "[Lawyer Name] responded to your inquiry"
+   Body: Message preview, [View Conversation] button
+
+3. Subscription Confirmation → Lawyer
+   Subject: "Welcome to FairPath Legal!"
+   Body: Getting started guide, [Go to Dashboard] button
+
+4. Payment Failed → Lawyer
+   Subject: "Payment failed - Update your payment method"
+   Body: Instructions to update card, [Update Payment] button
+
+5. Weekly Summary → Lawyer
+   Subject: "Your FairPath Legal Weekly Summary"
+   Body: Leads this week, conversions, revenue, [View Dashboard] button
+
+
+PUSH NOTIFICATIONS (Mobile App)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. New message from lawyer
+2. Consultation reminder (24 hours before)
+3. New lead for lawyer
+4. Lead status changed
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    DEPLOYMENT CHECKLIST                              │
+└─────────────────────────────────────────────────────────────────────┘
+
+BEFORE LAUNCH:
+□ Set up Stripe product + price ($20/month)
+□ Create webhook endpoint for Stripe events
+□ Build AI eligibility API (or rule engine)
+□ Database tables created with proper indexes
+□ Email service configured (SendGrid/Postmark)
+□ Terms of Service + Privacy Policy pages
+□ Lawyer verification process (bar number check?)
+□ Test full user flow: check eligibility → contact lawyer
+□ Test full lawyer flow: signup → get lead → respond
+□ Stripe test mode → live mode switch
+□ Mobile app API integration tested
+□ Load testing (simulate 100 concurrent eligibility checks)
+
+NICE TO HAVE (Post-Launch):
+□ Review/rating system
+□ Lawyer badges/certifications
+□ Case outcome tracking
+□ Referral program for lawyers
+□ Analytics dashboard for admin
+□ A/B testing on pricing
+□ SEO optimization for lawyer profiles
+□ Blog/resources section
+
+
+════════════════════════════════════════════════════════════════════════
+
+Questions? Let's sync up!
+
+Web: Sterling
+Mobile: [Your Mobile Dev]
+Backend: [Your Backend Dev]
+
+Let's build this together 💚🟣
+
+════════════════════════════════════════════════════════════════════════

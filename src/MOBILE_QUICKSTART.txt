@@ -1,0 +1,320 @@
+════════════════════════════════════════════════════════════════════════
+                FAIRPATH LEGAL - MOBILE DEV QUICKSTART
+                    "Copy This to Your Mobile Team Chat"
+════════════════════════════════════════════════════════════════════════
+
+Hey Mobile Team! 👋
+
+Sterling here. I just finished building the entire FairPath Legal platform 
+on the web side. Here's everything you need to get started on mobile.
+
+────────────────────────────────────────────────────────────────────────
+                    📱 WHAT TO BUILD (PRIORITY ORDER)
+────────────────────────────────────────────────────────────────────────
+
+USER APP (For people seeking expungement)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCREEN 1: Eligibility Checker (Part 1 - Charges)
+- Header: "Check Your Eligibility"
+- List of charges (can add multiple)
+- Each charge has:
+  * Offense name (text input)
+  * Year of conviction (text input)
+  * Type (dropdown: Felony/Misdemeanor)
+  * State (dropdown: all 50 states)
+  * County (text input)
+  * Delete button (if more than 1 charge)
+- [+ Add Another Charge] button
+- [Next Step] button
+
+SCREEN 2: Eligibility Checker (Part 2 - Questions)
+- "Have you completed all probation/parole requirements?"
+  * [Yes, completed] button
+  * [No, still ongoing] button
+- "Do you have any pending criminal charges?"
+  * [No pending charges] button
+  * [Yes, pending charges] button
+- [Back] button
+- [Check Eligibility] button (disabled until both answered)
+
+SCREEN 3: Results Screen
+IF ELIGIBLE:
+- Big green ✅ icon
+- "You Are Eligible!" headline
+- Explanation text (from AI)
+- "High Confidence" badge
+- Next Steps section (numbered list)
+- Cost/Timeline cards:
+  * Timeline (e.g., "3-6 months")
+  * Court Filing Fee (e.g., "$150")
+  * Lawyer Cost (e.g., "$800 - $2,500")
+- "{X} Lawyers Ready to Help" card
+- [View Lawyers] button (primary purple)
+- [Check Another Record] button (secondary)
+
+IF NOT ELIGIBLE:
+- Big red ❌ icon
+- "Not Eligible" headline
+- Explanation why
+- Alternative options (if any)
+- [Check Another Record] button
+
+SCREEN 4: Lawyer Directory
+- Search bar
+- State filter dropdown
+- Sort dropdown (Rating/Price/Experience)
+- List of lawyer cards:
+  * Lawyer name + firm name
+  * Profile photo placeholder
+  * Star rating + review count
+  * Years of experience badge
+  * Location (city, state)
+  * Consultation fee
+  * Expungement fee range
+  * Bio (truncated)
+  * Stats (cases/success rate/response time)
+  * [Contact] button (goes to Screen 5)
+
+SCREEN 5: Lawyer Profile Detail
+- Full lawyer info (all fields from card)
+- Practice areas (chips)
+- Service states
+- Full bio
+- Reviews section (list of reviews)
+- [Contact {Name}] button
+- [Call] button
+- [Back] button
+
+SCREEN 6: Contact/Messaging
+- Chat interface
+- Pre-filled message with eligibility summary
+- Send/receive messages
+- Read receipts
+- Typing indicators
+
+
+LAWYER APP (Optional - Could be web-only)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCREEN 1: Signup Flow (5 screens)
+- Basic info → Practice info → Service areas → Pricing → Payment
+(See full details in MOBILE_APP_SYNC_DECEMBER_4.txt)
+
+SCREEN 2: Dashboard (4 tabs)
+- Overview → Leads → Profile → Settings
+(See full details in MOBILE_APP_SYNC_DECEMBER_4.txt)
+
+
+────────────────────────────────────────────────────────────────────────
+                    🔌 API ENDPOINTS YOU'LL CALL
+────────────────────────────────────────────────────────────────────────
+
+1. Check Eligibility
+POST /api/legal/check-eligibility
+Body: { charges: [...], probationCompleted: true, pendingCharges: false }
+Returns: Full eligibility result
+
+2. Get Lawyers
+GET /api/legal/lawyers?state=California&sort=rating
+Returns: List of lawyers
+
+3. Contact Lawyer (Create Lead)
+POST /api/legal/leads
+Body: { lawyerId, userId, message, ... }
+Returns: Lead created
+
+4. Send Message
+POST /api/legal/leads/:leadId/message
+Body: { message: "..." }
+Returns: Message created
+
+5. Get Messages
+GET /api/legal/leads/:leadId/messages
+Returns: List of messages
+
+(Full API docs in TECHNICAL_ARCHITECTURE.txt)
+
+
+────────────────────────────────────────────────────────────────────────
+                    🎨 DESIGN TOKENS
+────────────────────────────────────────────────────────────────────────
+
+COLORS:
+Primary: #A855F7 (Purple)
+Secondary: #A8F32C (Lime Green - for accents)
+Success: #10B981 (Green)
+Error: #EF4444 (Red)
+Warning: #F59E0B (Orange)
+Background: #000000 (Black)
+Surface: #1F1F1F (Dark Gray)
+Text Primary: #FFFFFF (White)
+Text Secondary: #9CA3AF (Gray)
+
+TYPOGRAPHY:
+Heading 1: 32sp, Bold
+Heading 2: 24sp, Bold
+Heading 3: 20sp, Semi-Bold
+Body: 16sp, Regular
+Caption: 14sp, Regular
+Label: 12sp, Medium
+
+SPACING:
+xs: 4px
+sm: 8px
+md: 16px
+lg: 24px
+xl: 32px
+xxl: 48px
+
+BORDER RADIUS:
+Button: 8px
+Card: 16px
+Input: 8px
+
+
+────────────────────────────────────────────────────────────────────────
+                    📦 MOCK DATA FOR TESTING
+────────────────────────────────────────────────────────────────────────
+
+Use this while backend is being built:
+
+Mock Eligibility Result:
+{
+  "eligible": true,
+  "confidence": "high",
+  "reason": "Your 2018 California drug possession conviction is eligible for expungement under PC 1203.4.",
+  "nextSteps": [
+    "Obtain certified copy of conviction from court",
+    "File petition for dismissal (CR-180 form)",
+    "Pay $150 court filing fee",
+    "Attend hearing (usually waived)"
+  ],
+  "timeline": "3-6 months",
+  "courtFilingFee": 150,
+  "estimatedLawyerCost": { "min": 800, "max": 2500 },
+  "matchedLawyers": 12
+}
+
+Mock Lawyers:
+[
+  {
+    "id": "1",
+    "name": "John Smith",
+    "firmName": "Smith Law Group",
+    "rating": 4.8,
+    "reviewCount": 47,
+    "yearsExperience": 15,
+    "location": "Los Angeles, CA",
+    "consultationFee": 0,
+    "expungementFeeRange": "$800 - $2,500",
+    "bio": "Specializing in criminal record relief for over 15 years.",
+    "casesCompleted": 523,
+    "successRate": 94,
+    "avgResponseTime": "2 hours"
+  },
+  {
+    "id": "2",
+    "name": "Maria Rodriguez",
+    "firmName": "Rodriguez Legal",
+    "rating": 4.9,
+    "reviewCount": 83,
+    "yearsExperience": 12,
+    "location": "San Diego, CA",
+    "consultationFee": 50,
+    "expungementFeeRange": "$1,000 - $3,000",
+    "bio": "Former public defender with a passion for second chances.",
+    "casesCompleted": 612,
+    "successRate": 96,
+    "avgResponseTime": "1 hour"
+  }
+]
+
+
+────────────────────────────────────────────────────────────────────────
+                    ✅ ACCEPTANCE CRITERIA
+────────────────────────────────────────────────────────────────────────
+
+Before marking as "done", make sure:
+
+□ User can enter multiple criminal charges
+□ User can answer probation/pending questions
+□ Results screen shows correct eligible/not eligible state
+□ Lawyer directory shows all lawyers
+□ User can filter lawyers by state
+□ User can sort lawyers by rating/price/experience
+□ Tapping lawyer card opens detail view
+□ Contact button works (even if just placeholder)
+□ Colors match design tokens (purple primary)
+□ Responsive on phone and tablet
+□ Loading states for API calls
+□ Error states if API fails
+□ Back navigation works correctly
+
+
+────────────────────────────────────────────────────────────────────────
+                    🚀 TIMELINE SUGGESTION
+────────────────────────────────────────────────────────────────────────
+
+WEEK 1:
+- Set up project structure
+- Build eligibility checker screens (1-3)
+- Use mock data
+
+WEEK 2:
+- Build lawyer directory + detail screens (4-5)
+- Use mock data
+
+WEEK 3:
+- Build messaging screen (6)
+- Integrate with real API (if ready)
+- Polish UI/UX
+
+WEEK 4:
+- Testing
+- Bug fixes
+- Submit for review
+
+
+────────────────────────────────────────────────────────────────────────
+                    📚 REFERENCE DOCS
+────────────────────────────────────────────────────────────────────────
+
+In the web project root, you'll find:
+
+1. MOBILE_APP_SYNC_DECEMBER_4.txt
+   → Full feature breakdown, user flows, data models
+
+2. TECHNICAL_ARCHITECTURE.txt
+   → Database schema, API endpoints, Stripe integration
+
+3. FAIRPATH_LEGAL_STATUS.txt
+   → What's done, what's not, launch priorities
+
+4. This file (MOBILE_QUICKSTART.txt)
+   → Quick reference for mobile devs
+
+
+────────────────────────────────────────────────────────────────────────
+                    💬 QUESTIONS? ASK STERLING
+────────────────────────────────────────────────────────────────────────
+
+Slack: @sterling
+Email: [your email]
+Phone: [your phone]
+
+I'm here to help! Let's build this together. 💚🟣
+
+
+════════════════════════════════════════════════════════════════════════
+
+TL;DR:
+1. Build 6 screens for users (eligibility checker → results → lawyer directory)
+2. Use purple color (#A855F7)
+3. Use mock data for now
+4. Read MOBILE_APP_SYNC_DECEMBER_4.txt for full details
+5. Ask Sterling if confused
+
+Let's go! 🚀
+
+════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,139 @@
+═══════════════════════════════════════════════════════════════════════════════
+🚀 FRIEND A FELON - COMPLETE APP CODE FOR AI RECREATION
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTRUCTIONS FOR AI:
+This is a complete 6,000+ line React + TypeScript reentry ecosystem app called
+"Friend A Felon" (acquired by FairPath Industries). Please recreate ALL files
+listed below with their EXACT code.
+
+DESIGN: Black/charcoal backgrounds, neon green (#A8F32C) accents, Futura Condensed Extra Bold font
+TECH: React 18, TypeScript, Tailwind CSS v4.0, Shadcn/ui, Supabase, Stripe, PayPal, SingleKey API
+
+USER TYPES (5): 
+1. Justice-Impacted Users (Felons)
+2. Property Owners  
+3. Employers
+4. Donors
+5. Resource Partners
+
+KEY FEATURES:
+✅ FastTrack Housing - $75 ($65 with FairPath+) for guaranteed showing in 48h
+✅ WOTC Jobs - 27-question compliance with "Save & Finish Later"
+✅ Free Marketplace - 3-7 claims/month
+✅ Gig Services - Background-verified providers
+✅ FairPath Score - Universal 0-1000 scoring
+✅ FairPath+ - $2/month subscription
+✅ Complete payment flows (Stripe + PayPal)
+✅ Eligibility engine - Only shows qualified opportunities
+✅ Zero dead ends - Every button works
+
+Please recreate this app with all files below. I'll list the actual code for key files.
+For Shadcn UI components (/components/ui/*), use standard Shadcn imports.
+
+═══════════════════════════════════════════════════════════════════════════════
+📦 NPM DEPENDENCIES
+═══════════════════════════════════════════════════════════════════════════════
+
+```json
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "latest",
+    "@supabase/supabase-js": "latest",
+    "sonner": "^2.0.3",
+    "react-hook-form": "^7.55.0",
+    "date-fns": "latest"
+  }
+}
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+📂 FILE TREE (150+ files)
+═══════════════════════════════════════════════════════════════════════════════
+
+/App.tsx
+/contexts/UserContext.tsx
+/utils/api.ts
+/utils/eligibilityEngine.ts
+/data/mockData.ts - 200+ housing, 200+ jobs, 100+ services
+/data/wotcQuestions.ts - 27 WOTC questions
+/styles/globals.css
+
+/components/auth/QuickLogin.tsx
+/components/onboarding/FelonOnboarding.tsx
+/components/onboarding/EmployerOnboarding.tsx
+/components/onboarding/PropertyOwnerOnboarding.tsx
+/components/onboarding/DonorOnboarding.tsx
+/components/onboarding/WOTCQuestionsStep.tsx
+
+/components/dashboards/FelonDashboard.tsx - 1,400 lines ⭐ CRITICAL
+/components/dashboards/PropertyOwnerDashboard.tsx - 850 lines ⭐
+/components/dashboards/EmployerDashboard.tsx - 750 lines ⭐
+/components/dashboards/DonorDashboard.tsx
+/components/dashboards/CustomerDashboard.tsx
+/components/dashboards/ProviderDashboard.tsx
+/components/dashboards/StaffingDashboard.tsx
+/components/dashboards/ResourcePartnerDashboard.tsx
+
+/components/felon/HousingApplicationFlow.tsx - FastTrack 7-step flow
+/components/felon/JobApplicationFlow.tsx - WOTC application
+/components/felon/MarketplaceClaimFlow.tsx
+/components/felon/ServiceBookingFlow.tsx
+/components/felon/BecomeProviderFlow.tsx
+
+/components/property/PropertyPostingFormComplete.tsx - 4-step wizard
+/components/property/ApproveApplicationFlow.tsx - Schedule showing in 48h
+/components/property/DenyApplicationFlow.tsx
+/components/property/ApplicantProfileView.tsx
+/components/property/ScreeningResultsView.tsx
+/components/property/PropertyOwnerPricingComplete.tsx
+
+/components/employer/JobPostingForm.tsx
+/components/employer/EmployerApplicationReview.tsx
+/components/employer/WOTCCenterComplete.tsx
+
+/components/payment/PaymentFlow.tsx
+/components/payment/PaymentMethodSelector.tsx
+/components/payment/PaymentConfirmation.tsx
+
+/components/subscription/PlanComparison.tsx
+/components/subscription/SubscriptionUpgrade.tsx
+
+/components/common/LogoFinal.tsx - Logo with tagline
+/components/common/FairPathScore.tsx
+
++ All Shadcn UI components in /components/ui/ (use standard Shadcn)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Now tell the AI:
+
+"I have a file above called 'FOR_AI_PASTE_THIS.txt' that lists the complete
+structure of a 6,000+ line Friend A Felon reentry ecosystem app. Please read 
+ALL files in my current project starting with /App.tsx, all files in 
+/components/, /utils/, /data/, /contexts/, and /styles/ directories. 
+
+Then recreate the entire application with all files and their full code so I 
+can paste it into a new Figma Make project. Include:
+
+1. All dashboard components (FelonDashboard, PropertyOwnerDashboard, etc.)
+2. All flow components (HousingApplicationFlow, JobApplicationFlow, etc.)
+3. All onboarding components
+4. All payment components
+5. All utility files (api.ts, mockData.ts, etc.)
+6. The styles/globals.css file
+7. The UserContext
+8. The main App.tsx
+
+For each file, output it in this format:
+
+════════════════════════════════════════════════════════════════════════════════
+📄 FILE: /path/to/file.tsx
+════════════════════════════════════════════════════════════════════════════════
+[COMPLETE CODE HERE]
+════════════════════════════════════════════════════════════════════════════════
+
+Make sure to include ALL 6,000+ lines of code across all files."
+

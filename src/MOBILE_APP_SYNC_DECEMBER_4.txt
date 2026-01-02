@@ -1,0 +1,507 @@
+════════════════════════════════════════════════════════════════════════
+                    FAIRPATH INDUSTRIES - WEB/MOBILE SYNC
+                    December 4, 2024 - MAJOR UPDATE
+                    FairPath Legal Platform NOW LIVE
+════════════════════════════════════════════════════════════════════════
+
+Hey mobile team! BIG update. We just built out the ENTIRE FairPath Legal platform 
+on the web side. This is a full end-to-end system with AI eligibility checking, 
+lawyer marketplace, signup flows, and dashboards. Read this carefully so we can 
+keep web/mobile aligned.
+
+────────────────────────────────────────────────────────────────────────
+                    🆕 FAIRPATH LEGAL - FULLY BUILT (NEW!)
+────────────────────────────────────────────────────────────────────────
+
+COLOR: Purple (#A855F7)
+PRICING: 100% FREE for users | $20/month for lawyers
+TAGLINE: "Clear Your Record with AI"
+
+WHAT IT IS:
+AI-powered expungement eligibility checker that connects justice-impacted 
+people with verified lawyers. Lawyers pay $20/month for access to pre-qualified 
+leads. We take NO commission on lawyer fees.
+
+────────────────────────────────────────────────────────────────────────
+                    USER FLOW (People Seeking Expungement)
+────────────────────────────────────────────────────────────────────────
+
+STEP 1: ELIGIBILITY CHECKER
+User Path: Legal page → "Check Your Eligibility" button
+
+Form Fields:
+- Criminal Charges (can add multiple):
+  * Offense name (text input, e.g., "Drug Possession")
+  * Year of conviction (text input, e.g., "2018")
+  * Felony or Misdemeanor (dropdown)
+  * State (dropdown, all 50 states)
+  * County (text input, e.g., "Los Angeles")
+  * [+ Add Another Charge button]
+
+- Additional Questions:
+  * "Have you completed all probation/parole requirements?" (Yes/No buttons)
+  * "Do you have any pending criminal charges?" (Yes/No buttons)
+
+AI Analysis Returns:
+{
+  "eligible": true,
+  "confidence": "high" | "moderate" | "low",
+  "mainCharge": { offense, year, state, county, type },
+  "eligibilityReason": "Your 2018 California drug possession conviction is eligible 
+                        for expungement under PC 1203.4. You completed probation in 2020.",
+  "nextSteps": [
+    "Obtain certified copy of conviction from court",
+    "File petition for dismissal (CR-180 form)",
+    "Pay $150 court filing fee",
+    "Attend hearing (usually waived for simple cases)"
+  ],
+  "timeline": "3-6 months",
+  "courtFilingFee": 150,
+  "estimatedLawyerCost": { min: 800, max: 2500 },
+  "matchedLawyers": 12,
+  "alternativeOptions": [
+    { 
+      type: "Certificate of Rehabilitation", 
+      eligible: false, 
+      reason: "Not required for your offense type" 
+    }
+  ]
+}
+
+What AI Checks:
+1. Offense type & severity (felony/misdemeanor, violent/non-violent)
+2. Time since conviction (state-specific waiting periods)
+3. State-specific laws (all 50 states)
+4. Sentence completion (probation, parole, fines)
+5. Additional convictions (multiple charges affect eligibility)
+6. Disqualifying factors (sex offenses, violent crimes, pending charges)
+7. Alternative options (sealing, pardons if not eligible)
+8. Cost & timeline estimates (filing fees, lawyer costs, processing time)
+
+Result Screen Shows:
+- ✅ Eligible OR ❌ Not Eligible (big visual indicator)
+- Detailed explanation (why eligible/not eligible)
+- Next steps (numbered list)
+- Timeline estimate
+- Court filing fee
+- Estimated lawyer cost range
+- Number of matched lawyers
+- [View Lawyers] button → Lawyer Directory
+
+
+STEP 2: LAWYER DIRECTORY
+User Path: Eligibility results → "View Lawyers" button
+
+Pre-filtered by user's state from eligibility check
+
+Lawyer Card Contains:
+- Name & firm name
+- Photo/avatar
+- Rating (1-5 stars) + review count
+- Years of experience
+- Bar state + license number
+- Service states (e.g., "California, Nevada")
+- Specialties (badges: "Expungement", "Record Sealing", "Pardons")
+- Location (city, state)
+- Consultation fee ($0 = FREE or $50-100)
+- Expungement fee range ("$800 - $2,500")
+- Bio (1-2 sentences)
+- Stats:
+  * Cases completed (e.g., 523)
+  * Success rate (e.g., 94%)
+  * Avg response time (e.g., "2 hours")
+- Buttons:
+  * [Contact {FirstName}] (primary purple button)
+  * [Call] (outline button)
+  * [View Profile] (outline button)
+
+Search/Filter Options:
+- Text search (name, location, specialty)
+- State filter (dropdown)
+- Sort by: Highest Rated | Most Reviews | Most Experience | Lowest Price
+
+Mock Lawyers (for testing):
+1. John Smith - Smith Law Group - CA - 4.8★ (47 reviews) - 15 yrs - $800-2,500
+2. Maria Rodriguez - Rodriguez Legal - CA - 4.9★ (83 reviews) - 12 yrs - $1,000-3,000
+3. David Chen - Chen & Associates - CA - 4.7★ (34 reviews) - 8 yrs - $600-2,000
+4. Sarah Williams - Williams Criminal Defense - CA/AZ - 5.0★ (28 reviews) - 20 yrs - $1,200-3,500
+
+
+STEP 3: CONTACT LAWYER
+User clicks "Contact" → Opens messaging (not built yet, placeholder)
+
+Should Include:
+- Pre-filled message with eligibility summary
+- User's contact info
+- Lawyer gets notification immediately
+- Both parties can message back and forth
+
+────────────────────────────────────────────────────────────────────────
+                    LAWYER FLOW (Attorneys Signing Up)
+────────────────────────────────────────────────────────────────────────
+
+STEP 1: LAWYER SIGNUP (5-step process)
+
+Entry Point: Legal page → "I'm a Lawyer" button
+
+FORM STEP 1 - Basic Information:
+- First name (text)
+- Last name (text)
+- Email (email)
+- Phone (tel)
+- Password (password)
+- Confirm password (password)
+
+FORM STEP 2 - Practice Information:
+- Firm name (text)
+- Bar number (text)
+- Bar state (dropdown, all 50 states)
+- Years of experience (number)
+- Practice areas (multi-checkbox):
+  * Expungement
+  * Record Sealing
+  * Certificate of Rehabilitation
+  * Pardons
+  * Juvenile Record Sealing
+  * Appeal/Motion to Reduce
+  * General Criminal Defense
+
+FORM STEP 3 - Service Areas:
+- Licensed states (multi-checkbox, all 50 states, scrollable)
+- Specific counties (textarea, optional - "e.g., Los Angeles County, Orange County")
+
+FORM STEP 4 - Pricing & Services:
+- Initial consultation fee (number, can be $0 for free)
+- Expungement services:
+  * Minimum fee (number)
+  * Maximum fee (number)
+- Record sealing services:
+  * Minimum fee (number)
+  * Maximum fee (number)
+
+FORM STEP 5 - Payment & Confirmation:
+- Subscription details box:
+  * FairPath Legal - Lawyer Subscription
+  * $20/month
+  * Includes:
+    - Profile in lawyer directory
+    - Pre-qualified client leads
+    - Direct messaging with clients
+    - Case management dashboard
+    - Cancel anytime
+
+- Payment form (Stripe):
+  * Card number
+  * Expiry (MM/YY)
+  * CVC
+
+- Terms checkbox:
+  "I agree to the Terms of Service and Privacy Policy. I understand my 
+  subscription will auto-renew at $20/month and I can cancel anytime."
+
+- [Complete Signup & Pay] button
+
+
+STEP 2: LAWYER DASHBOARD (4 tabs)
+
+TAB 1 - Overview:
+Stats Cards:
+- Total Leads: 124 (+ 18 new badge)
+- Converted Clients: 42 (34% conversion rate badge)
+- Est. Revenue: $52,400 (+12% badge)
+- Avg Response Time: 2.3 hours
+
+Recent Leads (shows 3 most recent):
+Each lead card shows:
+- Client name
+- Offense (e.g., "Drug Possession (2018)")
+- Location (county, state)
+- Eligibility status (✓ "Eligible under PC 1203.4...")
+- Client message (quoted text)
+- Contact info (email, phone)
+- Date submitted
+- Status badge (New Lead | Contacted | Consultation Scheduled)
+- [Respond] button
+
+Quick Action Cards:
+- Update Profile (click → Profile tab)
+- Your Rating (4.8★ with 47 reviews)
+- Performance (34% conversion, 2.3hr response, "Above Average" badge)
+
+
+TAB 2 - Leads:
+Filter buttons: All | New | In Progress | Converted
+
+Full lead list with same card layout as Overview, but ALL leads visible
+
+Lead Actions:
+- [Message] button (primary)
+- [Schedule] button (outline)
+- [Mark Converted] button (outline)
+
+
+TAB 3 - Profile:
+Editable fields:
+- First/last name
+- Firm name
+- Bio (textarea, placeholder: "Tell potential clients about your experience...")
+- Email, phone
+- Practice areas (chips with + Add Area button)
+- Service pricing:
+  * Consultation fee
+  * Expungement fee range (min/max)
+
+[Save Changes] button
+
+
+TAB 4 - Settings:
+Subscription & Billing:
+- Current plan box:
+  * FairPath Legal - Lawyer Plan
+  * $20/month
+  * Next billing date: January 4, 2025
+  * [Update Payment Method] button
+  * [Cancel Subscription] button (red)
+
+Notification Preferences (toggles):
+- New Lead Emails (default ON)
+- Weekly Summary (default ON)
+- Client Messages (default ON)
+
+[Save Preferences] button
+
+────────────────────────────────────────────────────────────────────────
+                    DATA MODELS (For Backend Sync)
+────────────────────────────────────────────────────────────────────────
+
+User Eligibility Check:
+{
+  userId: string,
+  charges: [
+    {
+      offense: string,
+      year: string,
+      state: string,
+      county: string,
+      felonyOrMisdemeanor: "felony" | "misdemeanor"
+    }
+  ],
+  probationCompleted: boolean,
+  pendingCharges: boolean,
+  eligibilityResult: {
+    eligible: boolean,
+    confidence: "high" | "moderate" | "low",
+    reason: string,
+    nextSteps: string[],
+    timeline: string,
+    courtFilingFee: number,
+    estimatedLawyerCost: { min: number, max: number },
+    matchedLawyers: number,
+    alternativeOptions: [...]
+  },
+  createdAt: timestamp
+}
+
+Lawyer Profile:
+{
+  lawyerId: string,
+  email: string,
+  phone: string,
+  firstName: string,
+  lastName: string,
+  firmName: string,
+  barNumber: string,
+  barState: string,
+  yearsExperience: number,
+  practiceAreas: string[],
+  serviceStates: string[],
+  serviceCounties: string,
+  bio: string,
+  consultationFee: number,
+  expungementFeeMin: number,
+  expungementFeeMax: number,
+  sealingFeeMin: number,
+  sealingFeeMax: number,
+  rating: number,
+  reviewCount: number,
+  casesCompleted: number,
+  successRate: number,
+  avgResponseTime: string,
+  subscriptionStatus: "active" | "canceled" | "past_due",
+  subscriptionId: string,
+  createdAt: timestamp
+}
+
+Lead (Client inquiry to Lawyer):
+{
+  leadId: string,
+  lawyerId: string,
+  userId: string,
+  clientName: string,
+  clientEmail: string,
+  clientPhone: string,
+  offense: string,
+  state: string,
+  county: string,
+  eligibilityDetails: string,
+  message: string,
+  status: "new" | "contacted" | "consultation_scheduled" | "converted" | "closed",
+  consultationDate: timestamp (optional),
+  createdAt: timestamp,
+  updatedAt: timestamp
+}
+
+────────────────────────────────────────────────────────────────────────
+                    TECHNICAL IMPLEMENTATION NOTES
+────────────────────────────────────────────────────────────────────────
+
+FRONTEND (Web):
+- Built with React + TypeScript
+- Components located in /components/legal/
+  * EligibilityChecker.tsx
+  * LawyerDirectory.tsx
+  * LawyerSignup.tsx
+  * LawyerDashboard.tsx
+  * LegalPlatform.tsx (main router)
+- Routes in App.tsx:
+  * #legal-checker
+  * #legal-directory
+  * #legal-lawyer-signup
+  * #legal-lawyer-dashboard
+- Color: Purple (#A855F7) throughout
+- Uses shadcn/ui components (Button, Card, Input, Badge, Tabs, etc.)
+
+BACKEND (Not built yet - needs implementation):
+- AI eligibility API endpoint (currently mocked)
+- Lawyer CRUD operations
+- Lead management system
+- Stripe subscription handling ($20/month)
+- Messaging system between lawyers and clients
+- Review/rating system
+
+MOBILE NEEDS TO BUILD:
+1. Eligibility checker screens (3 steps)
+2. Lawyer directory/search
+3. Lawyer profile view
+4. Messaging between client and lawyer
+5. Lawyer signup flow (5 steps)
+6. Lawyer dashboard (4 tabs)
+7. Lead management for lawyers
+
+────────────────────────────────────────────────────────────────────────
+                    UPDATED SERVICE SUMMARY (ALL 5)
+────────────────────────────────────────────────────────────────────────
+
+1. FRIEND A FELON 🟢 (Lime Green #A8F32C)
+   - "For the People"
+   - Sterling's story, dedicated to Quin Braden
+   - 4 platforms: Jobs, Housing, Free Stuff, Services
+   - 100% FREE for users forever
+
+2. FAIRPATH FORWARD 🔵 (Blue #3B82F6)
+   - Offline tablet app for incarcerated people
+   - Reentry Readiness Score (0-100)
+   - Metrics: 66% lower recidivism, 77% employment, $47K saved
+   - For facilities/states: $500-5,000/month subscriptions
+
+3. FAIRPATH STAFFING 🟠 (Orange #F97316)
+   - Employer hiring platform
+   - Pre-vetted candidates from Forward app
+   - Pricing: $500-1,500 per hire OR $500-5,000/month subscriptions
+   - WOTC tax credits ($2,400-9,600 per hire)
+
+4. FAIRPATH LEGAL 🟣 (Purple #A855F7) ⭐ NEW - FULLY BUILT
+   - AI expungement eligibility checker
+   - Lawyer marketplace
+   - FREE for users | $20/month for lawyers
+   - No commission on lawyer fees
+   - Full platform live: checker, directory, signup, dashboard
+
+5. FAIRPATH SIMULATIONS 🔴 (Red #EF4444)
+   - Reentry simulation game
+   - "Walk a Mile in Their Shoes"
+   - For employers, educators, public
+   - FREE for individuals | $299/month for organizations
+
+────────────────────────────────────────────────────────────────────────
+                    WHAT MOBILE SHOULD SYNC NOW
+────────────────────────────────────────────────────────────────────────
+
+PRIORITY 1 - FairPath Legal:
+✅ Build eligibility checker UI (match our 3-step flow exactly)
+✅ Build lawyer directory/search
+✅ Implement lawyer signup (match our 5 steps)
+✅ Build lawyer dashboard (match our 4 tabs)
+✅ Use same data models for leads, lawyers, eligibility checks
+✅ Match pricing: $20/month for lawyers, FREE for users
+
+PRIORITY 2 - Align Existing Services:
+✅ Ensure Forward metrics match (66% recidivism, 77% employment, $47K saved)
+✅ Staffing pricing: $500-1,500/hire, $500-5,000/month subscriptions
+✅ Use same color system (Green, Blue, Orange, Purple, Red)
+
+PRIORITY 3 - User Experience:
+✅ Keep "For the People" messaging on Friend A Felon
+✅ Quin Braden dedication on Friend A Felon
+✅ Professional tone for FairPath services, authentic tone for FAF
+✅ 100% free messaging for justice-impacted people across all platforms
+
+────────────────────────────────────────────────────────────────────────
+                    QUESTIONS FOR MOBILE TEAM
+────────────────────────────────────────────────────────────────────────
+
+1. Do you want to build FairPath Legal in the mobile app or web-only?
+2. Should we share a single backend for lawyer profiles and leads?
+3. How do you want to handle the AI eligibility API? (shared endpoint?)
+4. Mobile app doing Stripe subscriptions for lawyers or web-only?
+5. Messaging system - in-app or redirect to web?
+6. Timeline for FairPath Legal mobile implementation?
+
+────────────────────────────────────────────────────────────────────────
+                    BACKEND TODO (For Both Teams)
+────────────────────────────────────────────────────────────────────────
+
+Need to build:
+1. AI Eligibility API
+   - Input: charges, probation status, pending charges
+   - Output: eligibility result object (see data model above)
+   - Should check real state laws (we're mocking for now)
+
+2. Lawyer Authentication
+   - Separate from user auth
+   - Lawyer signup → create profile → activate subscription
+   - Stripe webhook for subscription status
+
+3. Lawyer Profile CRUD
+   - Create, read, update, delete lawyer profiles
+   - Public endpoint for directory (filtered by state)
+   - Protected endpoint for lawyer to update own profile
+
+4. Lead Management
+   - User submits eligibility → if eligible → create lead for matched lawyers
+   - Lawyer can view/update lead status
+   - Notification system (email/push when new lead)
+
+5. Messaging System
+   - Real-time chat between lawyer and client
+   - Attach eligibility report to conversation
+   - Read receipts, timestamps
+
+6. Reviews/Ratings
+   - Users can review lawyers after case closes
+   - Aggregate rating (average of all reviews)
+   - Display on lawyer profile
+
+────────────────────────────────────────────────────────────────────────
+
+🚀 COPY THIS ENTIRE FILE AND SHARE WITH MOBILE TEAM 🚀
+
+Web team (Sterling): FairPath Legal is FULLY BUILT and ready to test.
+Mobile team: Use this doc to align your development.
+
+Let's sync up on Slack/Discord to discuss backend architecture!
+
+Built with 💚 by Sterling for the people.
+Dedicated to Quin Braden - our superhero.
+
+════════════════════════════════════════════════════════════════════════

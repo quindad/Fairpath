@@ -1,0 +1,796 @@
+════════════════════════════════════════════════════════════════════════
+                    POLICE THE POLICE™ by FairPath Industries
+                    "The Body Cam for the People"
+                    Product Brief for Development & Design
+════════════════════════════════════════════════════════════════════════
+
+🔴 PRIMARY COLOR: Red (#EF4444)
+💚 ACCENT: Lime Green (#A8F32C) - FairPath family connection
+⚫ BACKGROUND: Black (#000000)
+🤍 TEXT: White (#FFFFFF)
+
+────────────────────────────────────────────────────────────────────────
+                    🏢 WELCOME TO THE FAMILY
+────────────────────────────────────────────────────────────────────────
+
+FAIRPATH INDUSTRIES PORTFOLIO:
+
+1. 💚 FRIEND A FELON (Lime Green)
+   - "For the People"
+   - Jobs, housing, resources, community
+   - 100% FREE forever
+
+2. 🔵 FAIRPATH FORWARD (Blue)
+   - Predictive reentry technology
+   - 66% lower recidivism
+   - For facilities: $500-5,000/month
+
+3. 🟠 FAIRPATH STAFFING (Orange)
+   - Fair chance hiring platform
+   - $500-1,500/hire OR $500-5,000/month
+
+4. 🟣 FAIRPATH LEGAL (Purple)
+   - AI expungement eligibility
+   - FREE for users | $20/month for lawyers
+
+5. 🔴 POLICE THE POLICE™ (Red) ⭐ NEW!
+   - Community accountability platform
+   - 100% FREE for the people
+   - Transparent Impact Fund model
+
+────────────────────────────────────────────────────────────────────────
+                    🎯 CORE MISSION
+────────────────────────────────────────────────────────────────────────
+
+Police The Police is FairPath's community safety accountability platform.
+
+We give people a body cam when they need it most.
+
+PROBLEM:
+- Police interactions can escalate
+- Evidence disappears
+- People feel powerless
+- Communities have no accountability tools
+- Legal rights are unclear
+
+SOLUTION:
+- Instant recording with cloud backup
+- Emergency contact alerts
+- Community witness network (2-mile radius)
+- Evidence that can't be deleted
+- Direct connection to FairPath Legal attorneys
+- Know Your Rights education
+
+FAIRPATH'S WHY:
+We built Friend A Felon for people coming home.
+We built FairPath Legal to clear records.
+We built Police The Police to STOP NEW RECORDS from being created unjustly.
+
+This completes the circle: Prevention → Legal Help → Reentry Support.
+
+────────────────────────────────────────────────────────────────────────
+                    💰 BUSINESS MODEL (REALISTIC FOR YEAR 1)
+────────────────────────────────────────────────────────────────────────
+
+PHASE 1 (LAUNCH - FIRST 1,000 USERS): 100% FREE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Everything free for everyone:
+✅ Unlimited recording
+✅ Cloud storage (reasonable limits)
+✅ Emergency contact alerts
+✅ Community witness alerts
+✅ Basic incident timeline
+✅ Connection to FairPath Legal
+✅ Know Your Rights library
+
+Funded by:
+- Friend A Felon Plus/Pro users ($9.99-19.99/mo) subsidize it
+- Impact Fund donations (see section below)
+- FairPath Legal lawyer subscriptions ($20/mo)
+
+WHY FREE?
+Because people who need this most can't afford subscriptions.
+And we don't launch features we can't afford to maintain.
+
+---
+
+PHASE 2 (AFTER 1,000 MONTHLY ACTIVE USERS): PREMIUM TIER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Then we add optional Premium ($4.99/mo):
+- Unlimited cloud storage (vs 10 incidents)
+- AI officer behavior analysis
+- Automatic legal summary PDFs
+- Priority attorney notifications
+- Advanced privacy controls (blur faces)
+- Export to multiple formats
+
+Free tier stays free forever.
+Premium is for power users, activists, journalists.
+
+---
+
+PHASE 3 (AFTER 5,000 USERS): INSTITUTIONAL LICENSING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+City/nonprofit dashboards:
+- Misconduct heatmaps
+- Trend analysis
+- Training insights
+- Risk scoring
+- $500-2,000/month per organization
+
+This is how we scale revenue without charging vulnerable communities.
+
+---
+
+WHAT WE'RE NOT DOING (YET):
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Insurance-style membership (too complex, regulatory issues)
+❌ In-app marketplace (hardware, fulfillment costs)
+❌ Affiliate programs (takes focus away from mission)
+
+We'll revisit these after 1,000 paying users across FairPath platforms.
+
+────────────────────────────────────────────────────────────────────────
+                    💚 THE IMPACT FUND (NEW!)
+────────────────────────────────────────────────────────────────────────
+
+WHAT IS IT?
+A transparent, community-funded pool that:
+1. Sponsors cloud storage for those who can't afford Premium
+2. Provides emergency legal vouchers (via FairPath Legal)
+3. Funds community camera hubs in high-risk areas
+4. Supports wrongfully arrested individuals
+
+HOW IT WORKS:
+- Anyone can donate (one-time or monthly)
+- 100% goes to direct support (zero overhead)
+- Live dashboard shows every dollar in and out
+- Community votes on allocation priorities quarterly
+
+FAIRPATH'S PROMISE:
+We take ZERO fees from the Impact Fund.
+All operational costs covered by other FairPath services.
+
+────────────────────────────────────────────────────────────────────────
+                    📊 IMPACT FUND PAGE DESIGN
+────────────────────────────────────────────────────────────────────────
+
+LIVE STATISTICS DASHBOARD:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    POLICE THE POLICE IMPACT FUND                     │
+│                    "Every Dollar. Accounted For."                   │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────┐ ┌─────────────────────────────────┐
+│   💵 TOTAL FUND BALANCE       │ │   📈 THIS MONTH                 │
+│   $12,847.53                  │ │   Raised: $4,250.00            │
+│   Last updated: 2 min ago     │ │   Spent: $3,100.00             │
+└──────────────────────────────┘ └─────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   📊 LIVE TRANSACTION FEED                                          │
+├─────────────────────────────────────────────────────────────────────┤
+│   ↓ $50.00 - Donation from Anonymous                Dec 4, 2:30 PM │
+│   ↑ $200.00 - Legal voucher for Marcus J.            Dec 4, 11:15 AM│
+│   ↓ $100.00 - Monthly donation from Sarah K.         Dec 4, 9:00 AM │
+│   ↑ $45.00 - Cloud storage sponsorship (3 users)     Dec 3, 8:20 PM │
+│   ↓ $25.00 - Donation from James T.                  Dec 3, 2:15 PM │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────┐ ┌─────────────────────────────────┐
+│   🎯 WHERE IT GOES             │ │   👥 PEOPLE HELPED THIS MONTH  │
+│                                │ │                                 │
+│   Legal Vouchers: 45%         │ │   127 users                     │
+│   Cloud Storage: 30%          │ │   18 legal consultations        │
+│   Community Hubs: 15%         │ │   340 GB evidence secured       │
+│   Emergency Support: 10%      │ │   9 wrongful charges dropped    │
+└──────────────────────────────┘ └─────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   💡 HOW TO CONTRIBUTE                                              │
+├─────────────────────────────────────────────────────────────────────┤
+│   [Donate Once]  [Monthly Donation]  [Sponsor a User]              │
+└─────────────────────────────────────────────────────────────────────┘
+
+TRANSPARENCY SECTION:
+
+"Every dollar in. Every dollar out. No exceptions.
+
+The Impact Fund is a separate bank account managed by FairPath Industries.
+We publish:
+- Real-time balance (updated every 5 minutes)
+- All deposits (anonymized donor names)
+- All disbursements (with recipient type, not full names)
+- Monthly audited reports
+- Quarterly allocation votes
+
+FairPath takes ZERO administrative fees from this fund.
+Our operations are covered by subscriptions from FairPath Forward,
+Staffing, and Legal services.
+
+This is for the people. Period."
+
+[View Full Audit Report] [Download Transaction History] [Vote on Next Quarter]
+
+────────────────────────────────────────────────────────────────────────
+                    🔗 HOW IT CONNECTS TO FAIRPATH LEGAL
+────────────────────────────────────────────────────────────────────────
+
+DURING A RECORDING:
+━━━━━━━━━━━━━━━━━━
+
+Button on screen: "Connect to Legal Hotline"
+
+Triggers:
+1. Sends last 30 seconds of video to FairPath Legal emergency line
+2. Attorney reviews footage in real-time
+3. Attorney provides:
+   - Immediate advice ("You can ask if you're being detained")
+   - State-specific rights reminder
+   - Post-incident consultation booking
+
+AFTER AN INCIDENT:
+━━━━━━━━━━━━━━━━━
+
+Automatic triggers:
+1. Incident timeline auto-generates legal summary
+2. User gets: "Need legal help? Book free consultation with FairPath Legal"
+3. If arrest occurred: Auto-ping to lawyers in user's state
+4. If charges filed: Direct connection to FairPath Legal expungement checker
+
+FROM FAIRPATH LEGAL SIDE:
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+Lawyers signed up with FairPath Legal:
+- Get notified of Police The Police incidents in their state
+- Can offer free initial consultations
+- Build cases with verified, timestamped evidence
+- Access full incident timelines with all angles
+
+IMPACT:
+- Police The Police generates evidence
+- FairPath Legal provides representation
+- If wrongful arrest → expungement via FairPath Legal
+- If person has record → reentry via Friend A Felon
+- Full circle of support
+
+────────────────────────────────────────────────────────────────────────
+                    📱 USER FLOW & SCREEN STRUCTURE
+────────────────────────────────────────────────────────────────────────
+
+HOME SCREEN
+━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   POLICE THE POLICE                                    [Menu] [👤]  │
+│   "The Body Cam for the People"                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│                   ┌─────────────────────────┐                       │
+│                   │                         │                       │
+│                   │    🔴 RECORD NOW        │                       │
+│                   │                         │                       │
+│                   │   Tap to Start          │                       │
+│                   │   Recording             │                       │
+│                   │                         │                       │
+│                   └─────────────────────────┘                       │
+│                                                                      │
+│   Quick Actions:                                                    │
+│   ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐  │
+│   │ 📹 My Incidents  │ │ 🗺️ Local Feed   │ │ ⚖️ Know Rights  │  │
+│   └──────────────────┘ └──────────────────┘ └──────────────────┘  │
+│                                                                      │
+│   ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐  │
+│   │ 👥 Contacts      │ │ 💚 Impact Fund   │ │ 🟣 Legal Help   │  │
+│   └──────────────────┘ └──────────────────┘ └──────────────────┘  │
+│                                                                      │
+│   Recent Activity:                                                  │
+│   🔴 3 incidents this week within 2 miles                           │
+│   🟢 Your emergency contacts are set up                             │
+│   💜 2 FairPath Legal lawyers available in your area                │
+└─────────────────────────────────────────────────────────────────────┘
+
+RECORD SCREEN (Active Recording)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   🔴 RECORDING - 00:02:34                                [X Close]  │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│                     [CAMERA VIEW FULL SCREEN]                       │
+│                                                                      │
+│   Status Bar (top overlay):                                         │
+│   📡 Cloud: Connected | 📍 GPS: Locked | 👥 2 witnesses joined     │
+│                                                                      │
+│   Bottom Overlay:                                                   │
+│   ┌──────────────────────────────────────────────────────────────┐ │
+│   │ ✅ Emergency contacts notified                               │ │
+│   │ ✅ 2-mile radius alerted                                     │ │
+│   │ ✅ Cloud backup active                                       │ │
+│   └──────────────────────────────────────────────────────────────┘ │
+│                                                                      │
+│   Action Buttons:                                                   │
+│   [🟣 Connect to Lawyer] [⚖️ My Rights] [🚨 Panic Mode]            │
+│                                                                      │
+│   [⏸️ STOP RECORDING]                                               │
+└─────────────────────────────────────────────────────────────────────┘
+
+KNOW YOUR RIGHTS (State-Specific)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   ⚖️ KNOW YOUR RIGHTS - California                    [Back]       │
+├─────────────────────────────────────────────────────────────────────┤
+│   During a Police Stop:                                             │
+│                                                                      │
+│   ✅ YOU CAN:                                                       │
+│   • Record police in public (1st Amendment)                         │
+│   • Ask "Am I being detained?" or "Am I free to go?"               │
+│   • Remain silent (5th Amendment)                                   │
+│   • Refuse searches without a warrant                               │
+│   • Ask for badge number and department                             │
+│                                                                      │
+│   ❌ YOU CANNOT:                                                    │
+│   • Physically interfere with police                                │
+│   • Record in restricted areas (jails, courts)                      │
+│   • Refuse to show ID during traffic stop                           │
+│                                                                      │
+│   💡 WHAT TO SAY:                                                   │
+│   "Officer, I'm recording for my safety."                           │
+│   "I do not consent to any searches."                               │
+│   "I wish to remain silent and speak to a lawyer."                  │
+│                                                                      │
+│   [📞 Connect to FairPath Legal Now]                               │
+│   [📄 View Full State Law (CA Penal Code)]                         │
+└─────────────────────────────────────────────────────────────────────┘
+
+INCIDENT TIMELINE (Post-Recording)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   📹 Incident - Dec 4, 2024 2:30 PM                    [⋮ Menu]    │
+├─────────────────────────────────────────────────────────────────────┤
+│   📍 Main St & 5th Ave, Los Angeles, CA                             │
+│   ⏱️ Duration: 8 min 42 sec                                         │
+│   👥 3 camera angles                                                │
+│                                                                      │
+│   PRIMARY VIDEO:                                                    │
+│   [▶️ Play 00:00:00 / 00:08:42]                                     │
+│   [Sterling Braden's camera]                                        │
+│                                                                      │
+│   ADDITIONAL ANGLES:                                                │
+│   📹 Angle 2 - Community witness (Sarah K.) - 6:20 duration         │
+│   📹 Angle 3 - Community witness (James T.) - 4:15 duration         │
+│                                                                      │
+│   INCIDENT DETAILS:                                                 │
+│   Officer Badge: #4521                                              │
+│   Department: LAPD - Central Division                               │
+│   Patrol Car: Unit 12                                               │
+│   Reason for Stop: Traffic violation (alleged)                      │
+│   Outcome: Warning issued, no arrest                                │
+│                                                                      │
+│   ACTIONS:                                                          │
+│   [📥 Download All Videos]                                          │
+│   [📤 Share with Lawyer]                                            │
+│   [🟣 Book Legal Consultation]                                      │
+│   [📊 Generate Legal Summary]                                       │
+│   [🗺️ View on Public Map]                                          │
+│   [🚨 Report Misconduct]                                            │
+└─────────────────────────────────────────────────────────────────────┘
+
+LOCAL FEED (Community Map)
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   🗺️ LOCAL INCIDENTS                                   [Filter ▼] │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│                     [MAP VIEW - Your Location 📍]                   │
+│                                                                      │
+│   Pins on map:                                                      │
+│   🔴 Live incident (1) - 0.3 mi away                                │
+│   🟠 Recent incident (3) - within 2 miles, last 24 hours            │
+│   ⚪ Past incident (12) - within 5 miles, last 30 days             │
+│                                                                      │
+│   Tap any pin to see:                                               │
+│   - Time/date                                                       │
+│   - Location                                                        │
+│   - Number of cameras                                               │
+│   - Outcome (arrest, warning, no action, etc.)                      │
+│   - Option to add your witness account                              │
+│                                                                      │
+│   [🔴 Join Live Incident]  [📊 View Heatmap]                        │
+└─────────────────────────────────────────────────────────────────────┘
+
+EMERGENCY CONTACTS SETUP
+━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   👥 EMERGENCY CONTACTS                                 [Edit]      │
+├─────────────────────────────────────────────────────────────────────┤
+│   When you start recording, these contacts are notified             │
+│   instantly via push notification AND SMS.                          │
+│                                                                      │
+│   CONTACT 1:                                                        │
+│   ┌──────────────────────────────────────────────────────────────┐ │
+│   │ Name: Mom                                                    │ │
+│   │ Phone: (555) 123-4567                                        │ │
+│   │ Has app: ✅ Yes                                              │ │
+│   │ Notification: Push + SMS                                     │ │
+│   │ [Edit] [Remove]                                              │ │
+│   └──────────────────────────────────────────────────────────────┘ │
+│                                                                      │
+│   CONTACT 2:                                                        │
+│   ┌──────────────────────────────────────────────────────────────┐ │
+│   │ Name: Attorney - John Smith                                  │ │
+│   │ Phone: (555) 987-6543                                        │ │
+│   │ Has app: ❌ No (will receive SMS link)                       │ │
+│   │ Notification: SMS only                                       │ │
+│   │ [Edit] [Remove]                                              │ │
+│   └──────────────────────────────────────────────────────────────┘ │
+│                                                                      │
+│   [+ Add Another Contact] (Max 3)                                   │
+│                                                                      │
+│   💡 TIP: At least one contact should have the app installed        │
+│   for best results. They'll see live video feed.                    │
+└─────────────────────────────────────────────────────────────────────┘
+
+FAIRPATH LEGAL CONNECTION
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   🟣 CONNECT TO FAIRPATH LEGAL                          [Back]      │
+├─────────────────────────────────────────────────────────────────────┤
+│   Need legal help with this incident?                               │
+│                                                                      │
+│   ✅ FREE initial consultation for Police The Police users          │
+│   ✅ Lawyers verified by FairPath Industries                        │
+│   ✅ Your incident video automatically shared (with permission)     │
+│   ✅ Expungement help if wrongfully arrested                        │
+│                                                                      │
+│   12 lawyers available in California:                               │
+│                                                                      │
+│   ┌──────────────────────────────────────────────────────────────┐ │
+│   │ 👤 John Smith, Esq.                                   4.8★   │ │
+│   │    Smith Criminal Defense                                    │ │
+│   │    Specialties: Police misconduct, Civil rights              │ │
+│   │    Free consultation: ✅ Yes                                 │ │
+│   │    Response time: 2 hours                                    │ │
+│   │    [Book Free Consultation]                                  │ │
+│   └──────────────────────────────────────────────────────────────┘ │
+│                                                                      │
+│   [See All Lawyers] [Call Emergency Legal Hotline]                  │
+│                                                                      │
+│   Or share this incident with your own lawyer:                      │
+│   [📤 Send Video + Summary via Email]                              │
+└─────────────────────────────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────────────
+                    🎨 DESIGN SYSTEM (RED THEME)
+────────────────────────────────────────────────────────────────────────
+
+PRIMARY COLOR: Red (#EF4444)
+- Main buttons
+- Recording indicator
+- Live status badges
+- Alert notifications
+
+ACCENT COLOR: Lime Green (#A8F32C)
+- Success states
+- Connected status
+- FairPath family branding
+- "Verified" badges
+
+BACKGROUND: Black (#000000)
+- Main app background
+- Dark mode only (safety/privacy)
+
+SURFACE: Dark Gray (#1F1F1F)
+- Cards
+- Modals
+- Panels
+
+TEXT:
+- Primary: White (#FFFFFF)
+- Secondary: Gray (#9CA3AF)
+- Tertiary: Dark Gray (#6B7280)
+
+STATUS COLORS:
+- Live: Red (#EF4444)
+- Recent: Orange (#F97316)
+- Past: Gray (#6B7280)
+- Connected: Green (#10B981)
+- Warning: Yellow (#F59E0B)
+
+TYPOGRAPHY:
+H1: 32sp, Bold (page titles)
+H2: 24sp, Bold (section headers)
+H3: 20sp, Semi-Bold (card titles)
+Body: 16sp, Regular (main text)
+Caption: 14sp, Regular (metadata)
+Label: 12sp, Medium (form labels)
+
+COMPONENTS:
+- Large primary button: Red, white text, 8px radius
+- Secondary button: Outline red, 8px radius
+- Status badge: Rounded pill, colored background
+- Cards: Dark gray, 16px radius, subtle shadow
+- Icons: Lucide React (consistent with other FairPath apps)
+
+────────────────────────────────────────────────────────────────────────
+                    🔧 TECHNICAL ARCHITECTURE
+────────────────────────────────────────────────────────────────────────
+
+FRONTEND (Mobile App):
+- React Native (cross-platform)
+- Native camera APIs
+- Background recording
+- GPS tracking
+- Push notifications (FCM)
+- Offline-first (recordings saved locally first)
+
+BACKEND (Shared with FairPath):
+- Supabase (database, auth, storage, realtime)
+- Tables:
+  * users (shared with FairPath)
+  * emergency_contacts
+  * incidents
+  * recordings
+  * witness_angles
+  * geo_alerts
+  * impact_fund_transactions
+  * legal_connections
+
+CLOUD STORAGE:
+- Supabase Storage or AWS S3
+- Videos uploaded in chunks (every 10 seconds)
+- Encrypted at rest
+- Redundant backups
+- 7-day retention for free tier (future)
+- Unlimited for Premium (future)
+
+GEO-RADIUS ALERTS:
+- When recording starts:
+  * Get user lat/lon
+  * Query users within 2-mile radius
+  * Send push notification via FCM
+  * Track who joins as witness
+
+INTEGRATION WITH FAIRPATH LEGAL:
+- Shared user database
+- API endpoint: POST /api/legal/police-incident
+- Sends:
+  * Incident ID
+  * Video URLs
+  * Location
+  * Timestamp
+  * Officer info (if captured)
+- Triggers:
+  * Lawyer notifications in user's state
+  * Emergency legal hotline alert
+  * Auto-generate legal summary
+
+IMPACT FUND TRACKING:
+- Separate bank account (transparency)
+- Stripe for donations (one-time + recurring)
+- Webhook logs every transaction
+- Public API endpoint for live balance
+- Monthly audit reports (auto-generated PDF)
+
+────────────────────────────────────────────────────────────────────────
+                    📋 FEATURE CHECKLIST (MVP - PHASE 1)
+────────────────────────────────────────────────────────────────────────
+
+CORE FEATURES (Launch):
+✅ Instant recording (tap one button)
+✅ Auto-start cloud upload
+✅ GPS lock + timestamp
+✅ Emergency contact alerts (push + SMS)
+✅ 2-mile radius community alerts
+✅ Multi-angle incident timeline
+✅ Know Your Rights library (all 50 states)
+✅ Panic shutdown (fake screen)
+✅ Evidence vault (encrypted, can't be deleted)
+✅ Local incident map feed
+✅ FairPath Legal connection
+✅ Impact Fund page (live statistics)
+✅ Basic incident details (location, time, duration)
+
+DEFERRED FEATURES (After 1,000 users):
+⏳ AI officer detection (badge numbers, behavior analysis)
+⏳ Auto-generate legal summary PDFs
+⏳ Premium subscription ($4.99/mo)
+⏳ Advanced privacy (blur faces, redact audio)
+⏳ Multi-format export
+⏳ Institutional dashboards
+⏳ FOIA request generator
+⏳ Officer accountability scorecards
+
+NOT BUILDING (YET):
+❌ Insurance membership
+❌ In-app marketplace
+❌ Hardware partnerships
+❌ Affiliate programs
+
+────────────────────────────────────────────────────────────────────────
+                    🚀 LAUNCH STRATEGY
+────────────────────────────────────────────────────────────────────────
+
+PHASE 1: SOFT LAUNCH (Month 1)
+- Beta test with 100 users
+- Focus on high-risk communities (Ferguson, MO; Baltimore, MD; etc.)
+- Partner with community organizations
+- Iron out bugs, get feedback
+
+PHASE 2: REGIONAL LAUNCH (Month 2-3)
+- Expand to 10 major cities
+- PR push: "FairPath launches Police The Police"
+- Social media campaign
+- Partner with civil rights groups (ACLU, NAACP, etc.)
+
+PHASE 3: NATIONAL LAUNCH (Month 4-6)
+- All 50 states
+- App Store / Google Play featured (pitch: community safety)
+- Media appearances (TechCrunch, The Verge, etc.)
+- Activist influencer partnerships
+
+GOAL: 10,000 users by Month 6
+Then launch Premium tier.
+
+────────────────────────────────────────────────────────────────────────
+                    👨‍👩‍👧‍👦 INTRODUCING POLICE THE POLICE TO THE FAMILY
+────────────────────────────────────────────────────────────────────────
+
+WEBSITE HOMEPAGE UPDATE:
+
+Add Police The Police as 6th service card:
+
+┌─────────────────────────────────────────────────────────────────────┐
+│   FAIRPATH INDUSTRIES                                                │
+│   "Building Systems for Second Chances"                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│   OUR SERVICES:                                                      │
+│                                                                      │
+│   [💚 Friend A Felon]  [🔵 FairPath Forward]  [🟠 FairPath Staffing]│
+│   [🟣 FairPath Legal]  [🔴 Police The Police™] [💗 Impact Fund]     │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+
+POLICE THE POLICE SERVICE PAGE:
+
+Hero Section:
+"The Body Cam for the People"
+
+Subheading:
+"Record. Protect. Connect. 100% Free."
+
+3 Value Props:
+1. 🔴 Instant Recording
+   "One tap starts recording, alerts contacts, and backs up to cloud"
+
+2. 👥 Community Witness Network
+   "People within 2 miles can join and record multiple angles"
+
+3. 🟣 Direct Legal Connection
+   "Instant access to FairPath Legal attorneys when you need them"
+
+How It Works (4 steps):
+1. Tap "Record Now"
+2. Emergency contacts + community alerted
+3. Cloud backup starts (evidence secured)
+4. Connect to lawyer if needed
+
+Pricing:
+"100% FREE for the people. Forever."
+
+Impact Fund CTA:
+"Help us keep it free for everyone. Donate to the Impact Fund."
+
+[Download on App Store] [Get it on Google Play]
+
+────────────────────────────────────────────────────────────────────────
+                    🎯 SUCCESS METRICS
+────────────────────────────────────────────────────────────────────────
+
+USER METRICS:
+- Downloads
+- Daily/Monthly active users
+- Recordings per month
+- Average recording duration
+- Community witness participation rate
+- Emergency contact alert success rate
+
+ENGAGEMENT METRICS:
+- Know Your Rights page views
+- FairPath Legal connections
+- Impact Fund donations
+- Incident timeline shares
+
+IMPACT METRICS:
+- Incidents recorded
+- Wrongful arrests prevented (self-reported)
+- Police misconduct reports filed
+- Legal cases won (tracked via FairPath Legal)
+- Evidence secured (total GB)
+
+FINANCIAL METRICS (After Premium launch):
+- Free tier users
+- Premium subscribers
+- Institutional licenses
+- Impact Fund balance
+- MRR (Monthly Recurring Revenue)
+
+────────────────────────────────────────────────────────────────────────
+                    📞 SUPPORT & SAFETY
+────────────────────────────────────────────────────────────────────────
+
+USER SAFETY FIRST:
+- App never stores passwords locally
+- All videos encrypted in transit + at rest
+- Can delete account + all data anytime
+- Privacy policy: we never sell user data
+- No tracking beyond core functionality
+
+COMMUNITY GUIDELINES:
+- Don't use app to harass or intimidate
+- Don't record in illegal areas (bathrooms, private property)
+- Don't interfere with police operations
+- Do remain calm and assert rights peacefully
+- Do share responsibly (protect bystander privacy)
+
+SUPPORT CHANNELS:
+- In-app help center
+- Email: support@policingthepolice.com
+- Emergency legal hotline: 1-800-FAIRPATH
+- Community Discord
+- FAQ / Knowledge base
+
+────────────────────────────────────────────────────────────────────────
+                    🔥 FINAL NOTES FOR FIGMA/MAKE BUILD
+────────────────────────────────────────────────────────────────────────
+
+DESIGN PRIORITIES:
+1. Large, obvious "Record Now" button (can't miss it)
+2. Clear status indicators during recording
+3. Simple, bold typography (readability in stressful situations)
+4. High contrast (dark mode for safety)
+5. Accessibility (works for all users)
+
+DEVELOPMENT PRIORITIES:
+1. Reliable cloud upload (don't lose footage!)
+2. Fast emergency contact alerts (under 3 seconds)
+3. Offline-first (works without internet)
+4. Battery optimization (recording is intensive)
+5. Security (encrypted everything)
+
+TESTING PRIORITIES:
+1. Record for 30+ minutes (battery/heat test)
+2. Test in low connectivity areas
+3. Test panic shutdown (make it look real)
+4. Test emergency contact alerts (push + SMS)
+5. Test community alerts (multiple users)
+
+MARKETING PRIORITIES:
+1. Partner with community organizations
+2. Emphasize "100% free" (not freemium trap)
+3. Show Impact Fund transparency
+4. Connect to FairPath Legal success stories
+5. User testimonials (real stories)
+
+════════════════════════════════════════════════════════════════════════
+
+POLICE THE POLICE™ by FairPath Industries
+Completing the circle: Prevention → Legal Help → Reentry Support
+
+🔴 For the people. By the people. Always free.
+
+Built with purpose by Sterling Braden & FairPath Industries.
+Dedicated to Quin Braden - our superhero. 💚
+
+════════════════════════════════════════════════════════════════════════

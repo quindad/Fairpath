@@ -1,0 +1,615 @@
+════════════════════════════════════════════════════════════════════════
+                FAIRPATH LEGAL - MASTER COORDINATION PLAN
+                Web + Mobile + Backend - Unified Strategy
+                "One Platform, Two Interfaces, Zero Confusion"
+════════════════════════════════════════════════════════════════════════
+
+📅 CREATED: December 4, 2024
+👥 TEAMS: Web (Sterling) + Mobile + Backend
+🎯 GOAL: Launch FairPath Legal by January 8, 2025
+💰 TARGET: $10K/month MRR by March 2025
+
+────────────────────────────────────────────────────────────────────────
+                    📊 CURRENT STATUS
+────────────────────────────────────────────────────────────────────────
+
+WEB:
+✅ 100% Complete - All screens built
+✅ Lawyer signup (5 steps)
+✅ Lawyer dashboard (4 tabs)
+✅ Eligibility checker
+✅ Lawyer directory
+✅ Booking flow
+⚠️  Needs: Smart Lookup (2 days), Backend API connection
+
+MOBILE:
+✅ 100% Complete - All screens built
+✅ Eligibility checker
+✅ Smart Lookup (EXCLUSIVE!) ⭐
+✅ AI checking animation
+✅ Lawyer marketplace
+✅ Lawyer profile
+✅ Booking flow
+⚠️  Needs: Backend API connection
+
+BACKEND:
+🚧 In Progress
+⚠️  Needs: Database tables, API endpoints, OpenAI integration, Stripe
+
+────────────────────────────────────────────────────────────────────────
+                    🎯 UNIFIED FEATURE SET
+────────────────────────────────────────────────────────────────────────
+
+FEATURES BOTH PLATFORMS HAVE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Eligibility Checker
+   - Enter criminal charges
+   - AI analyzes eligibility
+   - Shows results (eligible/not eligible)
+   - Next steps, timeline, costs
+
+✅ Lawyer Directory
+   - Browse lawyers by state
+   - Filter by rating, price, experience
+   - View lawyer profiles
+   - Read reviews
+
+✅ Lawyer Booking
+   - Schedule consultation
+   - Choose type (phone/video/in-person)
+   - Pick date/time
+   - Confirmation
+
+✅ Messaging (Coming)
+   - Chat with lawyer
+   - Real-time sync
+   - Notifications
+
+FEATURES UNIQUE TO MOBILE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Smart Charge Lookup ⭐
+   - User enters vague description
+   - AI finds exact charge
+   - 3 matches with confidence scores
+   - WEB WILL ADD THIS!
+
+✅ Countdown Timers
+   - Shows exact date when eligible
+   - Daily updates
+   - WEB WILL ADD THIS!
+
+✅ Free Check System
+   - 1 free check/month for Plus/Pro
+   - Prevents abuse
+   - WEB WILL ADD THIS!
+
+✅ 5-Stage AI Animation
+   - Shows analysis progress
+   - Better UX than loading spinner
+   - WEB WILL ADD THIS!
+
+FEATURES UNIQUE TO WEB:
+━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Lawyer Signup
+   - 5-step onboarding
+   - Practice areas, pricing, payment
+   - Stripe subscription
+   - STAYS WEB-ONLY (easier than mobile)
+
+✅ Lawyer Dashboard
+   - Manage leads
+   - Update profile
+   - View stats
+   - Billing settings
+   - STAYS WEB-ONLY (lawyers prefer desktop)
+
+────────────────────────────────────────────────────────────────────────
+                    🏗️ SHARED BACKEND ARCHITECTURE
+────────────────────────────────────────────────────────────────────────
+
+ONE DATABASE: Supabase Postgres
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tables (10 total):
+1. criminal_charges - User's criminal charges
+2. expungement_results - AI analysis results
+3. lawyers - Lawyer profiles
+4. lawyer_consultations - Bookings
+5. lawyer_notifications - Pings to lawyers
+6. messages - Chat messages
+7. conversations - Chat threads
+8. eligibility_checks_used - Free check tracking
+9. reviews - Lawyer ratings
+10. users - Supabase auth (shared)
+
+ONE API: Supabase Edge Functions
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Base URL: https://{project}.supabase.co/functions/v1/
+
+Endpoints (11 total):
+
+AI Endpoints (2):
+- POST /api/legal/check-eligibility
+- POST /api/legal/smart-lookup
+
+Lawyer Endpoints (4):
+- GET /api/legal/lawyers
+- GET /api/legal/lawyers/:id
+- POST /api/legal/lawyers (web only)
+- PUT /api/legal/lawyers/:id (web only)
+
+Consultation Endpoints (2):
+- POST /api/legal/consultations
+- GET /api/legal/consultations
+
+Messaging Endpoints (2):
+- POST /api/legal/leads/:id/messages
+- GET /api/legal/leads/:id/messages
+
+Notification Endpoints (1):
+- POST /api/legal/lawyers/notify
+
+ONE AI SERVICE: OpenAI
+━━━━━━━━━━━━━━━━━━━━━
+
+Model: GPT-4o-mini
+Rate Limit: 100 requests/day per user
+Caching: Yes (30-day TTL for common charges)
+
+TWO PROMPTS:
+1. Eligibility Check (returns eligible/not eligible)
+2. Smart Lookup (returns 3 charge matches)
+
+────────────────────────────────────────────────────────────────────────
+                    📅 4-WEEK LAUNCH TIMELINE
+────────────────────────────────────────────────────────────────────────
+
+WEEK 1: Backend Foundation (Dec 4-8)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[BACKEND]
+□ Day 1: Create all database tables
+□ Day 2: Build AI eligibility endpoint
+□ Day 2: Integrate OpenAI GPT-4o-mini
+□ Day 3: Build Smart Lookup endpoint
+□ Day 4: Build lawyer directory endpoint
+□ Day 5: Testing + documentation
+
+[WEB]
+□ Day 1: Review API specs
+□ Day 2-3: Add Smart Lookup to web UI
+□ Day 4: Add free check system
+□ Day 5: Add countdown timers
+
+[MOBILE]
+□ Day 1: Review API specs
+□ Day 2-5: Test endpoints as they go live
+□ Day 5: Replace mock data with real API calls
+
+DELIVERABLES:
+✅ Database tables created
+✅ AI endpoints working
+✅ Lawyer directory endpoint working
+✅ Smart Lookup on web
+✅ Both platforms tested
+
+---
+
+WEEK 2: Core Integration (Dec 11-15)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[BACKEND]
+□ Day 1: Build consultation booking endpoint
+□ Day 2-3: Build lawyer notification system
+□ Day 4: Email service integration (SendGrid)
+□ Day 5: SMS service integration (Twilio)
+
+[WEB]
+□ Day 1-2: Connect eligibility checker to API
+□ Day 3-4: Set up Stripe subscriptions
+□ Day 5: Test lawyer signup flow
+
+[MOBILE]
+□ Day 1: Connect eligibility checker to API
+□ Day 2: Connect Smart Lookup to API
+□ Day 3: Connect lawyer directory to API
+□ Day 4: Connect booking to API
+□ Day 5: End-to-end testing
+
+DELIVERABLES:
+✅ Consultation booking working
+✅ Lawyer notifications working
+✅ Stripe subscriptions working
+✅ Both platforms fully connected
+✅ Cross-platform tested
+
+---
+
+WEEK 3: Messaging & Polish (Dec 18-22)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[BACKEND]
+□ Day 1: Build messaging endpoints
+□ Day 1: Set up Supabase Realtime
+□ Day 2: Push notification service (FCM)
+□ Day 3-4: Testing + optimization
+□ Day 5: Load testing
+
+[WEB]
+□ Day 1-2: Build lawyer inbox (in dashboard)
+□ Day 3: Email notifications for messages
+□ Day 4-5: UI polish + bug fixes
+
+[MOBILE]
+□ Day 1-2: Connect messaging to API
+□ Day 2: Set up push notifications
+□ Day 3-4: UI polish + bug fixes
+□ Day 5: Performance optimization
+
+DELIVERABLES:
+✅ Messaging working (real-time)
+✅ Push notifications working
+✅ Email notifications working
+✅ Both platforms polished
+✅ Performance optimized
+
+---
+
+WEEK 4: Launch Prep (Jan 2-5, 2025)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ALL TEAMS]
+□ Day 1: Load testing (1000 concurrent users)
+□ Day 1: Security audit
+□ Day 2: Create onboarding tutorials
+□ Day 2: Prepare marketing materials
+□ Day 3: Soft launch (50 beta users)
+□ Day 4: Monitor + bug fixes
+□ Day 5: Final preparations
+
+LAUNCH: January 8, 2025 🚀
+
+────────────────────────────────────────────────────────────────────────
+                    👥 TEAM RESPONSIBILITIES
+────────────────────────────────────────────────────────────────────────
+
+BACKEND TEAM (Web team owns):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Responsibilities:
+- Create database tables
+- Build API endpoints
+- Integrate OpenAI
+- Integrate Stripe
+- Email/SMS services
+- Supabase Realtime setup
+- Load testing
+- Security
+
+Tech Stack:
+- Supabase (Postgres, Auth, Realtime, Edge Functions)
+- Deno + Hono (API server)
+- OpenAI GPT-4o-mini
+- Stripe
+- SendGrid (email)
+- Twilio (SMS)
+- FCM (push notifications)
+
+Lead: Sterling (web team)
+
+---
+
+WEB TEAM:
+━━━━━━━━━
+
+Responsibilities:
+- Build lawyer signup flow ✅
+- Build lawyer dashboard ✅
+- Build eligibility checker ✅
+- Add Smart Lookup (inspired by mobile)
+- Add free check system
+- Add countdown timers
+- Connect to API endpoints
+- Stripe integration (frontend)
+- Messaging inbox
+
+Tech Stack:
+- React + TypeScript
+- Tailwind CSS
+- Shadcn/ui
+- Supabase client
+- Stripe.js
+
+Lead: Sterling
+
+---
+
+MOBILE TEAM:
+━━━━━━━━━━━
+
+Responsibilities:
+- All user screens ✅
+- Smart Charge Lookup ✅
+- AI checking animation ✅
+- Connect to API endpoints
+- Push notifications
+- Messaging chat interface
+- Performance optimization
+
+Tech Stack:
+- React Native / Flutter (TBD)
+- Native UI components
+- Supabase client
+- FCM (Firebase Cloud Messaging)
+
+Lead: Mobile Dev
+
+────────────────────────────────────────────────────────────────────────
+                    🔄 DATA FLOW EXAMPLES
+────────────────────────────────────────────────────────────────────────
+
+EXAMPLE 1: User Checks Eligibility
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MOBILE:
+1. User fills out charge form
+2. User clicks "Check Eligibility"
+3. POST /api/legal/check-eligibility
+4. Backend calls OpenAI
+5. Backend saves result to expungement_results table
+6. Backend pings matched lawyers
+7. Response returned to mobile
+8. Mobile shows results screen
+
+WEB (Same flow):
+1. User fills out charge form
+2. User clicks "Check Eligibility"
+3. POST /api/legal/check-eligibility
+4. [Same backend process]
+7. Response returned to web
+8. Web shows results screen
+
+RESULT:
+✅ Same API endpoint
+✅ Same database record
+✅ Same lawyer notifications
+✅ Different UI presentation
+
+---
+
+EXAMPLE 2: User Uses Smart Lookup
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MOBILE:
+1. User enters "drug charge"
+2. Selects California
+3. Clicks "Find My Charge"
+4. POST /api/legal/smart-lookup { description: "drug charge", state: "CA" }
+5. Backend calls OpenAI
+6. OpenAI returns 3 matches with confidence
+7. Mobile shows 3 options
+8. User taps "95% Match"
+9. Mobile auto-fills charge form
+
+WEB (Same flow):
+1. User clicks "Don't know your exact charge?"
+2. Modal opens
+3. User enters "drug charge"
+4. Selects California
+5. Clicks "Find My Charge"
+6-9. [Same as mobile]
+
+RESULT:
+✅ Same API endpoint
+✅ Same AI logic
+✅ Same results
+✅ Different UI (mobile = full screen, web = modal)
+
+---
+
+EXAMPLE 3: User Books Lawyer
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MOBILE:
+1. User taps "Book Consultation"
+2. Selects phone consultation
+3. Picks date/time
+4. POST /api/legal/consultations
+5. Backend creates record
+6. Backend sends notifications (email/SMS to lawyer, push to mobile)
+7. Mobile shows confirmation
+
+WEB (Same flow):
+1. User clicks "Book Consultation"
+2. [Same booking flow]
+7. Web shows confirmation
+
+LAWYER (Web Dashboard):
+1. Receives email notification
+2. Logs in to web dashboard
+3. Sees new booking in "Overview" tab
+4. Clicks "Confirm"
+5. PUT /api/legal/consultations/:id/confirm
+6. User gets confirmation (email + push notification)
+
+RESULT:
+✅ Cross-platform booking (mobile → web)
+✅ Real-time sync
+✅ Notifications on all channels
+
+────────────────────────────────────────────────────────────────────────
+                    💰 REVENUE TRACKING
+────────────────────────────────────────────────────────────────────────
+
+METRICS TO TRACK:
+━━━━━━━━━━━━━━━━
+
+Lawyer Metrics:
+- Total lawyer signups (all time)
+- Active subscriptions (current month)
+- Churned subscriptions (current month)
+- MRR (Monthly Recurring Revenue)
+- Churn rate (% per month)
+- LTV (Lifetime Value per lawyer)
+
+User Metrics:
+- Total eligibility checks (all time)
+- Eligibility checks (current month)
+- Smart Lookup usage rate
+- Eligible users (%)
+- Lawyer contacts per eligible user
+- Bookings per eligible user
+
+Platform Metrics:
+- Revenue (MRR from lawyers)
+- Costs (OpenAI API, Supabase, hosting)
+- Profit margin
+- CAC (Customer Acquisition Cost for lawyers)
+- LTV/CAC ratio
+
+GOAL TRACKING:
+━━━━━━━━━━━━━
+
+Launch (Jan 8, 2025):
+- Target: 10 lawyers signed up
+- Target: 100 eligibility checks
+
+Month 1 (Jan 2025):
+- Target: 50 lawyers ($1,000 MRR)
+- Target: 500 eligibility checks
+
+Month 3 (Mar 2025):
+- Target: 200 lawyers ($4,000 MRR)
+- Target: 2,000 eligibility checks
+
+Month 6 (Jun 2025):
+- Target: 500 lawyers ($10,000 MRR)
+- Target: 5,000 eligibility checks
+
+Year 1 (Jan 2026):
+- Target: 1,000 lawyers ($20,000 MRR)
+- Target: 12,000 eligibility checks
+- Target: $240,000 ARR
+
+────────────────────────────────────────────────────────────────────────
+                    🔒 SECURITY CHECKLIST
+────────────────────────────────────────────────────────────────────────
+
+AUTHENTICATION:
+□ Users: Supabase Auth (email/phone)
+□ Lawyers: Separate auth with lawyer role
+□ JWT tokens with expiration
+□ Refresh token rotation
+□ Password hashing (bcrypt)
+
+AUTHORIZATION:
+□ Row Level Security (RLS) on all tables
+□ Users can only see their own charges
+□ Lawyers can only see their own leads
+□ Admin can see everything
+
+API SECURITY:
+□ Rate limiting (100 requests/minute per user)
+□ API key validation
+□ CORS properly configured
+□ Input validation on all endpoints
+□ SQL injection prevention (parameterized queries)
+□ XSS prevention (sanitize inputs)
+
+DATA PRIVACY:
+□ PII encrypted at rest
+□ HTTPS only (SSL certificates)
+□ Lawyer bar numbers verified
+□ User consent for lawyer contact
+□ GDPR compliance (right to delete)
+□ CCPA compliance (California)
+
+PAYMENT SECURITY:
+□ Stripe PCI compliance
+□ No credit cards stored locally
+□ Webhook signature validation
+□ Subscription cancellation flow
+□ Refund handling
+
+────────────────────────────────────────────────────────────────────────
+                    📞 COMMUNICATION CHANNELS
+────────────────────────────────────────────────────────────────────────
+
+SLACK:
+- #fairpath-legal (general discussion)
+- #legal-backend (API development)
+- #legal-mobile (mobile-specific)
+- #legal-web (web-specific)
+- #legal-launches (countdown to launch)
+
+MEETINGS:
+- Daily Standup: 9am PST (15 min)
+  * What I did yesterday
+  * What I'm doing today
+  * Any blockers
+
+- Weekly Sync: Fridays 2pm PST (1 hour)
+  * Demo progress
+  * Review metrics
+  * Plan next week
+
+- Technical Sync: As needed
+  * Deep dives on architecture
+  * Code reviews
+  * Pair programming
+
+DOCUMENTATION:
+- Notion: Living docs, meeting notes
+- GitHub: Code, issues, PRs
+- Figma: Design files (if needed)
+- Google Drive: Spreadsheets, presentations
+
+────────────────────────────────────────────────────────────────────────
+                    🎉 LAUNCH CHECKLIST
+────────────────────────────────────────────────────────────────────────
+
+PRE-LAUNCH (Week 4):
+□ All features tested
+□ Load testing complete
+□ Security audit passed
+□ Legal docs ready (Terms, Privacy)
+□ Marketing materials prepared
+□ Beta users recruited
+□ Support system set up
+
+LAUNCH DAY (Jan 8):
+□ Deploy to production
+□ Monitor error logs
+□ Watch performance metrics
+□ Respond to user feedback
+□ Fix critical bugs ASAP
+
+POST-LAUNCH (Week 1):
+□ Daily metrics review
+□ User onboarding improvements
+□ Bug fixes
+□ Feature tweaks based on feedback
+□ Marketing push (social media, press)
+
+────────────────────────────────────────────────────────────────────────
+
+CONTACTS:
+━━━━━━━━
+
+Web Team: sterling@fairpath.com
+Mobile Team: mobile@fairpath.com
+Emergency: [phone number]
+
+════════════════════════════════════════════════════════════════════════
+
+🚀 LET'S SHIP THIS AND CHANGE LIVES! 🚀
+
+Built with 💜 by FairPath Industries
+Dedicated to Quin Braden - our superhero
+For the people. Always.
+
+════════════════════════════════════════════════════════════════════════
